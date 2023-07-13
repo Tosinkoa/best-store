@@ -1,0 +1,211 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* START FROM HERE */
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--secondary) var(--primary);
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+/*----------------------Tables----------------*/
+.table {
+  @apply w-full  lg:text-base text-sm md:text-base font-semibold text-left bg-gray-50 dark:bg-gray-800 relative;
+}
+
+.table_head {
+  @apply justify-center uppercase  bg-inherit w-full;
+}
+
+.table_row {
+  @apply border-b-2 dark:border-gray-200 md:font-bold font-semibold;
+}
+
+.table_head_row {
+  @apply p-2 py-3 md:px-5 md:py-3 text-left cursor-default;
+}
+
+.table_head_row {
+  @apply border-b dark:border-gray-500 hover:bg-gray-300 dark:hover:bg-gray-500;
+}
+
+.table_head_row_text {
+  @apply p-2 md:px-10  md:py-4  font-medium;
+}
+
+.table_data {
+  @apply px-2 md:px-6 py-2 md:py-4 lg:text-base text-sm  text-left;
+}
+
+.profile_component_tabs_button {
+  @apply flex cursor-pointer flex-row items-center space-x-3 border rounded-md w-fit  whitespace-nowrap px-2 py-1 border-secondary-500 text-sm font-semibold;
+}
+
+[data-star] {
+  @apply text-left w-fit not-italic inline-block relative before:block before:content-["★★★★★"] before:text-[#eeebeb] after:whitespace-nowrap after:absolute after:content-["★★★★★"] after:w-0 after:text-[#ff8c00] after:overflow-hidden after:h-full after:left-0 after:top-0;
+  unicode-bidi: bidi-override;
+}
+[data-star^="0.1"]::after,
+[data-star^=".1"]::after {
+  @apply w-[2%];
+}
+[data-star^="0.2"]::after,
+[data-star^=".2"]::after {
+  @apply w-[4%];
+}
+[data-star^="0.3"]::after,
+[data-star^=".3"]::after {
+  @apply w-[6%];
+}
+[data-star^="0.4"]::after,
+[data-star^=".4"]::after {
+  @apply w-[8%];
+}
+[data-star^="0.5"]::after,
+[data-star^=".5"]::after {
+  @apply w-[10%];
+}
+[data-star^="0.6"]::after,
+[data-star^=".6"]::after {
+  @apply w-[12%];
+}
+[data-star^="0.7"]::after,
+[data-star^=".7"]::after {
+  @apply w-[14%];
+}
+[data-star^="0.8"]::after,
+[data-star^=".8"]::after {
+  @apply w-[16%];
+}
+[data-star^="0.9"]::after,
+[data-star^=".9"]::after {
+  @apply w-[18%];
+}
+[data-star^="1"]::after {
+  @apply w-1/5;
+}
+[data-star^="1.1"]::after {
+  @apply w-[22%];
+}
+[data-star^="1.2"]::after {
+  @apply w-[24%];
+}
+[data-star^="1.3"]::after {
+  @apply w-[26%];
+}
+[data-star^="1.4"]::after {
+  @apply w-[28%];
+}
+[data-star^="1.5"]::after {
+  @apply w-[30%];
+}
+[data-star^="1.6"]::after {
+  @apply w-[32%];
+}
+[data-star^="1.7"]::after {
+  @apply w-[34%];
+}
+[data-star^="1.8"]::after {
+  @apply w-[36%];
+}
+[data-star^="1.9"]::after {
+  @apply w-[38%];
+}
+[data-star^="2"]::after {
+  @apply w-2/5;
+}
+[data-star^="2.1"]::after {
+  @apply w-[42%];
+}
+[data-star^="2.2"]::after {
+  @apply w-[44%];
+}
+[data-star^="2.3"]::after {
+  @apply w-[46%];
+}
+[data-star^="2.4"]::after {
+  @apply w-[48%];
+}
+[data-star^="2.5"]::after {
+  @apply w-6/12;
+}
+[data-star^="2.6"]::after {
+  @apply w-[52%];
+}
+[data-star^="2.7"]::after {
+  @apply w-[54%];
+}
+[data-star^="2.8"]::after {
+  @apply w-[56%];
+}
+[data-star^="2.9"]::after {
+  @apply w-[58%];
+}
+[data-star^="3"]::after {
+  @apply w-3/5;
+}
+[data-star^="3.1"]::after {
+  @apply w-[62%];
+}
+[data-star^="3.2"]::after {
+  @apply w-[64%];
+}
+[data-star^="3.3"]::after {
+  @apply w-[66%];
+}
+[data-star^="3.4"]::after {
+  @apply w-[68%];
+}
+[data-star^="3.5"]::after {
+  @apply w-[70%];
+}
+[data-star^="3.6"]::after {
+  @apply w-[72%];
+}
+[data-star^="3.7"]::after {
+  @apply w-[74%];
+}
+[data-star^="3.8"]::after {
+  @apply w-[76%];
+}
+[data-star^="3.9"]::after {
+  @apply w-[78%];
+}
+[data-star^="4"]::after {
+  @apply w-4/5;
+}
+[data-star^="4.1"]::after {
+  @apply w-[82%];
+}
+[data-star^="4.2"]::after {
+  @apply w-[84%];
+}
+[data-star^="4.3"]::after {
+  @apply w-[86%];
+}
+[data-star^="4.4"]::after {
+  @apply w-[88%];
+}
+[data-star^="4.5"]::after {
+  @apply w-[90%];
+}
+[data-star^="4.6"]::after {
+  @apply w-[92%];
+}
+[data-star^="4.7"]::after {
+  @apply w-[94%];
+}
+[data-star^="4.8"]::after {
+  @apply w-[96%];
+}
+[data-star^="4.9"]::after {
+  @apply w-[98%];
+}
+[data-star^="5"]::after {
+  @apply w-full;
+}
