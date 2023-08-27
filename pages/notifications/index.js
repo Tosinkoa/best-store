@@ -1,5 +1,5 @@
 import WebsiteMetadata from "@/components/00-WebsiteMetadata/WebsiteMetadata";
-import { getLayout } from "@/components/Layouts/SellerDashboardLayout";
+import { getLayout } from "@/components/Layouts/DashboardLayout";
 import { Tab } from "@headlessui/react";
 
 function classNames(...classes) {
@@ -22,7 +22,9 @@ const Notifications = () => {
                   classNames(
                     "w-full rounded-lg py-2.5 md:text-sm text-xs  font-medium leading-5 text-blue-700",
                     "ring-white ring-opacity-60 ring-offset-2 ring-offset-blue-400 focus:outline-none focus:ring-2",
-                    selected ? "bg-secondary-50 shadow" : "text-blue-100 hover:bg-white/[0.12] hover:text-white"
+                    selected
+                      ? "bg-secondary-50 shadow"
+                      : "text-blue-100 hover:bg-white/[0.12] hover:text-white"
                   )
                 }
               >
@@ -34,7 +36,10 @@ const Notifications = () => {
             {tabContent.map((eachTabContent, index) => (
               <Tab.Panel
                 key={index}
-                className={classNames("rounded-md h-[73vh] md:h-[78vh]  overflow-y-auto bg-secondary-50 p-4", "ring-white ring-opacity-60 ring-offset-2 ring-offset-blue-400 outline-none ")}
+                className={classNames(
+                  "rounded-md h-[73vh] md:h-[78vh]  overflow-y-auto bg-secondary-50 p-4",
+                  "ring-white ring-opacity-60 ring-offset-2 ring-offset-blue-400 outline-none "
+                )}
               >
                 {eachTabContent}
               </Tab.Panel>

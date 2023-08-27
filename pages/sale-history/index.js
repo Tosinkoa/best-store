@@ -1,5 +1,5 @@
 import TableComponent from "@/components/Helper/TableComponent";
-import { getLayout } from "@/components/Layouts/SellerDashboardLayout";
+import { getLayout } from "@/components/Layouts/DashboardLayout";
 import { SaleHistoryColumn } from "@/components/SellerComponent/SaleHistory/SaleHistoryColumn";
 
 const SaleHistory = () => {

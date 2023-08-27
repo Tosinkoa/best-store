@@ -1,4 +1,4 @@
-import { getLayout } from "@/components/Layouts/SellerDashboardLayout";
+import { getLayout } from "@/components/Layouts/DashboardLayout";
 import ProductList from "@/components/GeneralComponent/ProductList";
 
 const SaveItem = () => {

@@ -1,4 +1,4 @@
-import { getLayout } from "@/components/Layouts/SellerDashboardLayout";
+import { getLayout } from "@/components/Layouts/DashboardLayout";
 import StoreSetting from "@/components/SellerComponent/Settings/StoreSetting";
 import { Tab } from "@headlessui/react";
 

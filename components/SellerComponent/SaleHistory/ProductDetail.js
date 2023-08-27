@@ -10,16 +10,25 @@ const ProductDetail = () => {
     <div>
       <button
         onClick={() => setShowProductCardDetail(true)}
-        className="bg-primary-600 shadow-sm ring-1 ring-primary-400 rounded-md px-2 py-1 font-semibold text-secondary-50"
+        className="bg-primary-800 shadow-sm ring-1 ring-primary-400 rounded-md px-2 py-1 font-semibold text-secondary-50"
       >
         View
       </button>
       {showProductCardDetail && (
         <>
-          <div onClick={() => setShowProductCardDetail(false)} className="lg:left-[300px] fixed inset-0 bg-black opacity-60"></div>
+          <div
+            onClick={() => setShowProductCardDetail(false)}
+            className="lg:left-[300px] fixed inset-0 bg-black opacity-60"
+          ></div>
           <div className="space-y-2 fixed inset-0 m-auto lg:left-[300px] h-96 p-4 w-10/12 md:w-2/4 lg:w-4/12 bg-secondary-50 rounded-md">
             <div className="relative h-40 w-40 rounded-md mx-auto">
-              <Image src="/assets/images/jsaas.png" alt="product image" layout="fill" objectFit="cover" className="rounded-md" />
+              <Image
+                src="/assets/images/jsaas.png"
+                alt="product image"
+                layout="fill"
+                objectFit="cover"
+                className="rounded-md"
+              />
             </div>
             <p className="mx-auto flex w-fit font-bold">Vacuum for cleaning the house</p>
             <div className="flex flex-col">

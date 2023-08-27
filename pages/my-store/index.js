@@ -1,5 +1,5 @@
 import OneStore from "@/components/GeneralComponent/OneStore";
-import { getLayout } from "@/components/Layouts/SellerDashboardLayout";
+import { getLayout } from "@/components/Layouts/DashboardLayout";
 import { FaTools } from "react-icons/fa";
 
 const MyStore = () => {

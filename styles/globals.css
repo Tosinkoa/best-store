@@ -8,9 +8,36 @@
   scrollbar-width: thin;
   scrollbar-color: var(--secondary) var(--primary);
 }
+.listbox_options {
+  @apply absolute mt-1 max-h-60 w-full overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm;
+}
+
+.form_error {
+  @apply text-sm mb-2 h-3 text-rose-600  font-medium;
+}
+
+.label_style {
+  @apply text-sm text-primary-800 font-semibold mb-2 flex;
+}
+
+.ql-toolbar.ql-snow {
+  @apply rounded-t-md !border-primary-200 !border-2;
+}
+
+.ql-toolbar.ql-snow + .ql-container.ql-snow {
+  @apply rounded-b-md !border-primary-200 !border-2;
+}
 
 input[type="number"] {
   -moz-appearance: textfield;
+}
+
+.form_error {
+  @apply text-red-500;
+}
+
+.loading_spinner {
+  @apply border-2 rounded-full h-6 flex mx-auto w-6 border-b-0 animate-spin;
 }
 
 /*----------------------Tables----------------*/

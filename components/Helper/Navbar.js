@@ -5,9 +5,13 @@ import { useEffect, useState } from "react";
 import BestAppLogo from "../01-Utils/BestAppLogo";
 
 const Navbar = ({ smallScreenSidebarHandler }) => {
+  /**
+   * @TODO Put email confirmation message inside notification
+   */
+
   return (
-    <div className="h-[55px] lg:w-[calc(100%_-_300px)] lg:ml-[300px] justify-between z-10 w-full shadow-md flex items-center px-2 md:px-5 fixed bg-inherit">
-      <div className="md:text-lg lg:hidden font-bold pt-2 text-base text-primary-600 pl-2 md:ml-4 h-[55px]  shadow-sm border-b items-center">
+    <div className="h-[55px] lg:w-[calc(100%_-_250px)] lg:ml-[250px] justify-between z-10 w-full shadow-md flex items-center px-2 md:px-5 fixed bg-inherit bg-white">
+      <div className="md:text-lg lg:hidden font-bold pt-2 text-base text-primary-800 pl-2 md:ml-4 h-[55px]  shadow-sm border-b items-center bg-white">
         <BestAppLogo />
       </div>
 
@@ -22,9 +26,9 @@ const Navbar = ({ smallScreenSidebarHandler }) => {
           <div className="rounded-full -right-1 bg-red-600 text-secondary-50 w-5 h-5 items-center flex place-content-center absolute text-xs">
             3
           </div>
-
           <AiOutlineShoppingCart className="md:text-[34px] text-[32px]" />
         </div>
+
         <div className=" block">
           <div className="md:h-[40px] md:w-[40px] w-[37px] h-[37px]  relative rounded-full ">
             <Image
