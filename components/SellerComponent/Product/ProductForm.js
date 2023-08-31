@@ -36,72 +36,71 @@ const ProductForm = () => {
       onSubmit={(values) => console.log(values)}
     >
       {() => (
-        <Form className="mt-4 w-full grid md:grid-cols-2 gap-x-4">
+        <Form className="mt-4 w-full grid md:grid-cols-2 gap-x-4 md:gap-x-6 lg:gap-x-10">
           {/* ADD THE DIV HERE */}
-          <div className="md:pr-6">
-            <div className="flex flex-col w-full">
-              <div>
-                <MyInput
-                  name="product_name"
-                  className="border-primary-200 rounded-md border-2 focus:border-primary-700 outline-none  px-3 py-2 w-full bg-inherit text-sm font-semibold text-secondary-500"
-                  label="Product Name"
-                />
-              </div>
+          <div className="flex flex-col w-full">
+            <div>
+              <MyInput
+                name="product_name"
+                className="border-primary-200 rounded-md border-2 focus:border-primary-700 outline-none  px-3 py-2 w-full bg-inherit text-sm font-semibold text-secondary-500"
+                label="Product Name"
+              />
+            </div>
 
-              <div className="flex md:flex-row flex-col md:gap-x-4 md:gap-y-0 gap-y-4 w-full mb-2 items-baseline">
-                <div className="w-full">
-                  <MyInput
-                    type="number"
-                    name="in_stock"
-                    className="border-primary-200 rounded-md border-2 focus:border-primary-700 outline-none  px-6 py-2 w-full bg-inherit text-sm font-semibold text-secondary-500"
-                    label="In Stock (Optional)"
-                  />
-                </div>
+            <div className="flex md:flex-row flex-col md:gap-x-4 md:gap-y-0 gap-y-4 w-full mb-2">
+              <MyListbox
+                options={people}
+                label="Cartegory"
+                getSelectedData={getSelectedCartegory}
+                labelIcon={<AiFillInfoCircle className="text-secondary-400 text-base " />}
+              />
+              <MyListbox
+                options={people}
+                label="Type"
+                getSelectedData={getSelectedType}
+              />
+            </div>
+            <div>
+              <MyInput
+                name="brand"
+                className="border-primary-200 rounded-md border-2 focus:border-primary-700 outline-none  px-3 py-2 w-full bg-inherit text-sm font-semibold text-secondary-500"
+                label="Brand"
+              />
+            </div>
 
-                <div className="flex w-full">
-                  <MyToggle label="Allow Bargain" getSelectedData={getSelectedBargain} />
-                </div>
-              </div>
-
-              <div className="flex md:flex-row flex-col md:gap-x-4 md:gap-y-0 gap-y-4 w-full mb-2">
-                <div className="relative w-full">
-                  <span className="absolute top-9 left-3 text-secondary-500">₦</span>
-                  <MyInput
-                    type="number"
-                    name="price"
-                    className="border-primary-200 rounded-md border-2 focus:border-primary-700 outline-none  px-6 py-2 w-full bg-inherit text-sm font-semibold text-secondary-500"
-                    label="Price"
-                  />
-                </div>
-                <div className="relative w-full">
-                  <span className="absolute top-9 left-3 text-secondary-500">₦</span>
-                  <MyInput
-                    type="number"
-                    name="crossed_out_price"
-                    className="border-primary-200 rounded-md border-2 focus:border-primary-700 outline-none  px-6 py-2 w-full bg-inherit text-sm font-semibold text-secondary-500"
-                    label="Crossed Out Price"
-                  />
-                </div>
-              </div>
-
+            <div className="flex md:flex-row flex-col md:gap-x-4 md:gap-y-0 gap-y-4 w-full mb-2 items-baseline">
               <div className="w-full">
-                <label htmlFor="descriptopn" className="label_style">
-                  Description
-                </label>
-                <ReactQuill
-                  theme="snow"
-                  name="description"
-                  className="md:h-[40vh] h-[35vh] bg-inherit text-sm font-semibold text-secondary-500"
-                  value={descriptionValue}
-                  onChange={setDescriptionValue}
+                <MyInput
+                  type="number"
+                  name="in_stock"
+                  className="border-primary-200 rounded-md border-2 focus:border-primary-700 outline-none  px-6 py-2 w-full bg-inherit text-sm font-semibold text-secondary-500"
+                  label="In Stock (Optional)"
                 />
+              </div>
+
+              <div className="flex w-full">
+                <MyToggle label="Allow Bargain" getSelectedData={getSelectedBargain} />
               </div>
             </div>
+
+            <div className="w-full">
+              <label htmlFor="descriptopn" className="label_style">
+                Description
+              </label>
+              <ReactQuill
+                theme="snow"
+                name="description"
+                className=" bg-inherit text-sm font-semibold text-secondary-500"
+                value={descriptionValue}
+                onChange={setDescriptionValue}
+              />
+            </div>
           </div>
+
           <div className="flex flex-col space-y-3 h-full">
             <div className="font-semibold flex text-sm items-center space-x-2">
               <span className="label_style">Product Images</span>
-              <AiFillInfoCircle className="text-secondary-400" />
+              <AiFillInfoCircle className="text-secondary-400 text-base" />
             </div>
             <div className="flex flex-row space-x-4">
               <div className="relative h-40 w-40 rounded-md">
@@ -130,31 +129,31 @@ const ProductForm = () => {
             </p>
 
             <div className="flex md:flex-row flex-col md:gap-x-4 md:gap-y-0 gap-y-4 w-full mb-2">
-              <MyListbox
-                options={people}
-                label="Cartegory"
-                getSelectedData={getSelectedCartegory}
-                labelIcon={<AiFillInfoCircle className="text-secondary-400 text-base " />}
-              />
-              <MyListbox
-                options={people}
-                label="Type"
-                getSelectedData={getSelectedType}
-              />
-            </div>
-            <div>
-              <MyInput
-                name="brand"
-                className="border-primary-200 rounded-md border-2 focus:border-primary-700 outline-none  px-3 py-2 w-full bg-inherit text-sm font-semibold text-secondary-500"
-                label="Brand"
-              />
+              <div className="relative w-full">
+                <span className="absolute top-9 left-3 text-secondary-500">₦</span>
+                <MyInput
+                  type="number"
+                  name="price"
+                  className="border-primary-200 rounded-md border-2 focus:border-primary-700 outline-none  px-6 py-2 w-full bg-inherit text-sm font-semibold text-secondary-500"
+                  label="Price"
+                />
+              </div>
+              <div className="relative w-full">
+                <span className="absolute top-9 left-3 text-secondary-500">₦</span>
+                <MyInput
+                  type="number"
+                  name="crossed_out_price"
+                  className="border-primary-200 rounded-md border-2 focus:border-primary-700 outline-none  px-6 py-2 w-full bg-inherit text-sm font-semibold text-secondary-500"
+                  label="Crossed Out Price"
+                />
+              </div>
             </div>
 
-            <div className="flex space-x-10 ">
-              <button className="bg-primary-800  text-white  shadow-sm  px-6 py-2 rounded-button font-semibold text-sm ">
+            <div className="flex w-full justify-between ">
+              <button className="bg-primary-800  text-white  shadow-sm  px-6 lg:px-10 py-2 rounded-button font-semibold text-sm ">
                 Save Product
               </button>
-              <button className="border-primary-800 text-primary-800  border-2   shadow-sm  px-6 py-2 rounded-button font-semibold text-sm ">
+              <button className="border-primary-800 text-primary-800  border-2   shadow-sm  px-6 lg:px-10 py-2 rounded-button font-semibold text-sm ">
                 Save to Draft
               </button>
             </div>
