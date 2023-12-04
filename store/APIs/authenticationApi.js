@@ -1,4 +1,4 @@
-import { fetcherApi } from "../fetcheApi";
+import { fetcherApi } from "../fetcherApi";
 
 export const authenticationApi = fetcherApi.injectEndpoints({
   endpoints(build) {
@@ -11,12 +11,19 @@ export const authenticationApi = fetcherApi.injectEndpoints({
       }),
       getAuth: build.query({
         query: () => ({ url: "auth" }),
+        providesTags: ["ForAuth"],
       }),
       logoutUser: build.mutation({
-        query: () => ({ url: "logout" }),
+        query: () => ({ url: "logout", method: "post" }),
+        invalidatesTags: ["ForAuth"],
       }),
     };
   },
 });
 
-export const { useGetAuthQuery, useLogoutUserMutation, useRegisterUserMutation, useLoginUserMutation } = authenticationApi;
+export const {
+  useGetAuthQuery,
+  useLogoutUserMutation,
+  useRegisterUserMutation,
+  useLoginUserMutation,
+} = authenticationApi;

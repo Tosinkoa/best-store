@@ -1,0 +1,45 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.Typewriter__cursor {
+  @apply font-light;
+}
+
+/* ------ LandingPageInsight */
+.landing_page_insight {
+  @apply py-20 grid w-full md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-4 place-content-center md:place-content-start px-2 md:px-5 lg:px-12;
+}
+
+.landing_page_insight_children {
+  @apply flex flex-col md:flex-row place-content-center md:place-content-start text-center md:text-start items-center space-x-4 font-semibold w-full space-y-2 md:space-y-0 md:px-0 px-5;
+}
+
+.landing_page_insight_icon_bg {
+  @apply flex w-fit;
+}
+
+.landing_page_insight_icon_sec_bg {
+  @apply rounded-full flex text-primary-800 border-primary-800 border-2 h-[5rem] w-[5rem] place-content-center items-center text-3xl;
+}
+
+.landing_page_insight_text {
+  h1 {
+    @apply font-semibold;
+  }
+  p {
+    @apply text-gray-600 font-medium;
+  }
+  @apply flex flex-col;
+}
+
+/* ------ LandingPageFlashDeals */
+.landing_page_flash_deals_items {
+  h1 {
+    @apply flex font-semibold;
+  }
+  .price {
+    @apply font-bold text-primary-800 text-2xl;
+  }
+  @apply h-[200px] md:h-[300px] lg:h-[200px] p-4 justify-between items-center md:items-start lg:items-center bg-gray-100 rounded-md flex flex-row md:flex-col-reverse lg:flex-row;
+}

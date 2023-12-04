@@ -1,6 +1,7 @@
-import TableComponent from "@/components/Helper/TableComponent";
+import AuthorizeHOC from "@/HOC/AuthorizeHOC";
+import TableComponent from "@/components/03Helper/TableComponent";
 import { getLayout } from "@/components/Layouts/DashboardLayout";
-import { SaleHistoryColumn } from "@/components/SellerComponent/SaleHistory/SaleHistoryColumn";
+import { SaleHistoryColumn } from "@/components/SaleHistory/SaleHistoryColumn";
 
 const SaleHistory = () => {
   return (
@@ -10,5 +11,4 @@ const SaleHistory = () => {
   );
 };
 
-SaleHistory.getLayout = getLayout;
-export default SaleHistory;
+export default AuthorizeHOC(SaleHistory, getLayout);

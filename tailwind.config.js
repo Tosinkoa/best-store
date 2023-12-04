@@ -10,18 +10,50 @@ module.exports = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        openSan: ["var(--font-openSan"],
+      },
       borderRadius: {
         button: "0.280rem",
       },
       animation: {
+        "infinite-rotate": "infinite-rotate 6s infinite linear",
         "breathing-object": "breathe 3s infinite",
+        "breathing-shoe": "breathe-shoe 4s infinite",
         "quick-dance": "quick-dance 3s infinite",
       },
 
       keyframes: {
+        "infinite-rotate": {
+          "0%": {
+            transform: "rotate(0deg) scale(1)",
+          },
+          "16.66%": {
+            transform: "rotate(60deg) scale(1.2)",
+          },
+          "33.33%": {
+            transform: "rotate(120deg) scale(1)",
+          },
+          "50%": {
+            transform: "rotate(180deg) scale(1.2)",
+          },
+          "66.66%": {
+            transform: "rotate(240deg) scale(1)",
+          },
+          "83.33%": {
+            transform: "rotate(300deg) scale(1.2)",
+          },
+          "100%": {
+            transform: "rotate(360deg) scale(1)",
+          },
+        },
         breathe: {
           "0%, 10%, 20%, 100%": { transform: "scale(1)" },
-          "5%, 15%": { transform: "scale(1.1)" },
+          "5%, 15%": { transform: "scale(1.2)" },
+        },
+        "breathe-shoe": {
+          "0%, 50%, 100%": { transform: "scale(1)" },
+          "25%, 75%": { transform: "scale(1.1)" },
         },
         "quick-dance": {
           "0%, 20%, 100%": { transform: "rotate(-15deg)" },
@@ -35,8 +67,7 @@ module.exports = {
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+        "gradient-conic": "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
     },
   },
@@ -63,6 +94,7 @@ module.exports = {
         "input::-webkit-outer-spin-button, input::-webkit-inner-spin-button": {
           "-webkit-appearance": "none",
           margin: "0",
+          border: "2px !important",
         },
       });
     }),

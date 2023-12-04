@@ -1,8 +1,28 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "./components.css";
+@import "tailwindcss/utilities";
 
 /* START FROM HERE */
+
+.input_style {
+  @apply border-primary-200 focus:ring-0 rounded-md border-2 focus:outline-none focus:border-primary-700 outline-none px-3 py-2 w-full bg-inherit text-sm text-secondary-500;
+}
+
+@layer utilities {
+  @layer utilities {
+    /* Hide scrollbar for Chrome, Safari and Opera */
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+
+    /* Hide scrollbar for IE, Edge and Firefox */
+    .no-scrollbar {
+      -ms-overflow-style: none; /* IE and Edge */
+      scrollbar-width: none; /* Firefox */
+    }
+  }
+}
 
 * {
   scrollbar-width: thin;
@@ -13,7 +33,7 @@
 }
 
 .form_error {
-  @apply text-sm mb-2 h-3 text-rose-600  font-medium;
+  @apply text-sm mb-2 h-3 text-rose-400 font-medium;
 }
 
 .label_style {
@@ -21,7 +41,7 @@
 }
 
 .ql-toolbar.ql-snow {
-  @apply rounded-t-md !border-primary-200 !border-2;
+  @apply rounded-t-md !border-primary-200 !border-2 bg-primary-100;
 }
 
 .ql-toolbar.ql-snow + .ql-container.ql-snow {
@@ -32,17 +52,13 @@ input[type="number"] {
   -moz-appearance: textfield;
 }
 
-.form_error {
-  @apply text-red-500;
-}
-
 .loading_spinner {
   @apply border-2 rounded-full h-6 flex mx-auto w-6 border-b-0 animate-spin;
 }
 
 /*----------------------Tables----------------*/
 .table {
-  @apply w-full  lg:text-base text-sm md:text-base font-semibold text-left bg-gray-50 dark:bg-gray-800 relative;
+  @apply w-full  lg:text-base text-sm md:text-base font-semibold text-left bg-gray-50 relative;
 }
 
 .table_head {
@@ -50,7 +66,7 @@ input[type="number"] {
 }
 
 .table_row {
-  @apply border-b-2 dark:border-gray-200 md:font-bold font-semibold;
+  @apply border-b-2  md:font-bold font-semibold;
 }
 
 .table_head_row {
@@ -58,7 +74,7 @@ input[type="number"] {
 }
 
 .table_head_row {
-  @apply border-b dark:border-gray-500 hover:bg-gray-300 dark:hover:bg-gray-500;
+  @apply border-b  hover:bg-gray-300;
 }
 
 .table_head_row_text {

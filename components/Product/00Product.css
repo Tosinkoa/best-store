@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.image_preview_gallery {
+  .image-gallery-content.image-gallery-thumbnails-left
+    .image-gallery-slide
+    .image-gallery-image,
+  .image-gallery-content.image-gallery-thumbnails-right
+    .image-gallery-slide
+    .image-gallery-image {
+    @apply rounded-md md:h-[60vh] h-[50vh] object-cover;
+  }
+  .image-gallery-thumbnail .image-gallery-thumbnail-image {
+    @apply rounded-[0.370rem];
+  }
+  .image-gallery-thumbnail.active,
+  .image-gallery-thumbnail:focus {
+    @apply border-[3px] rounded-[0.370rem] p-0 border-primary-600;
+  }
+  .image-gallery-left-nav .image-gallery-svg,
+  .image-gallery-right-nav .image-gallery-svg {
+    @apply w-12 h-12;
+  }
+}

@@ -1,3 +1,4 @@
+import AuthorizeHOC from "@/HOC/AuthorizeHOC";
 import WebsiteMetadata from "@/components/00-WebsiteMetadata/WebsiteMetadata";
 import { getLayout } from "@/components/Layouts/DashboardLayout";
 import { Tab } from "@headlessui/react";
@@ -51,5 +52,4 @@ const Notifications = () => {
   );
 };
 
-Notifications.getLayout = getLayout;
-export default Notifications;
+export default AuthorizeHOC(Notifications, getLayout);

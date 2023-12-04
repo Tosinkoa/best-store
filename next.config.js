@@ -2,7 +2,11 @@
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    domains: ["www.apple.com"],
+    remotePatterns: [
+      { protocol: "https", hostname: "www.apple.com" },
+      { protocol: "https", hostname: "res.cloudinary.com" },
+      { protocol: "https", hostname: "thumbs.dreamstime.com" },
+    ],
   },
 };
 

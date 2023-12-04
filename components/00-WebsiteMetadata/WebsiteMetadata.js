@@ -40,15 +40,8 @@ const WebsiteMetadata = ({
         <title>{title}</title>
         <meta httpEquiv="Content-Type" content="text/html; charset=utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta
-          property="og:title"
-          content={OG_Title_Content}
-          key={OG_Title_Key}
-        />
-        <meta
-          property="og:description"
-          content="Archware Facility for Everyone"
-        />
+        <meta property="og:title" content={OG_Title_Content} key={OG_Title_Key} />
+        <meta property="og:description" content="Best Store for Everyone" />
         <meta name="description" content={description} />
         <meta name="keywords" content={keywords} />
         <link rel="icon" href="/favicon/favicon.ico" />
