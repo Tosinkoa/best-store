@@ -68,7 +68,7 @@ const LandingPageHotDeals = () => {
     // If user has logged in, add cart products to localStorage
     if (!isUserAuthenticatedLoading && isUserAuthenticatedSuccessfully) {
       const body = { product_count: 1 };
-      const result = await addProductToCart({ body, product_id });
+      const result = await addProductToCart({ body, product_id: incomingProduct.product_id });
       if (result.error) {
         const { error } = result.error.data;
         const errorResult = ErrorGetter(error);

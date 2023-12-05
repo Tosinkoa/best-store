@@ -10,15 +10,12 @@ import { BiSearch } from "react-icons/bi";
 import { HiOutlineUserCircle } from "react-icons/hi";
 import { useSelector } from "react-redux";
 import BestAppLogo from "../01Utils/BestAppLogo";
+import useGetCartCount from "../ReusableHooks/CartHooks/useGetCartCount";
 /**
  * @TODO Put email confirmation message inside notification
  */
 
 const LandingPageNavbar = ({ smallScreenSidebarHandler }) => {
-  const isAddingCartToLocalStorage = useSelector(
-    (state) => state.addedCartToLocalStorage.isAddingCartToLocalStorage
-  );
-  const [localStorageCartProductCount, setLocalStorageCartProductCount] = useState(null);
   const { data: loggedInUserData, isLoading: isLoggedInUserDataLoading } =
     useGetLoggedInUserQuery();
   const {
@@ -26,7 +23,6 @@ const LandingPageNavbar = ({ smallScreenSidebarHandler }) => {
     isLoading: isAllCartDataLoading,
     isError: isAllCartError,
   } = useGetBuyerCartQuery();
-  const [totalProductInCart, setTotalProductInCart] = useState(null);
 
   const {
     isSuccess: isUserAuthenticatedSuccessfully,
@@ -34,32 +30,11 @@ const LandingPageNavbar = ({ smallScreenSidebarHandler }) => {
     isError: isUserAuthenticatedError,
   } = useGetAuthQuery();
 
-  console.log("isAddingCartToLocalStorage:", isAddingCartToLocalStorage);
-
-  useEffect(() => {
-    // If user is yet to log in, get cart products from localStorage
-    if (!isUserAuthenticatedLoading && isUserAuthenticatedError) {
-      if (typeof window !== "undefined") {
-        const localStorageCartProductCount = localStorage.getItem("cart_products");
-        if (localStorageCartProductCount) {
-          const parsedData = JSON.parse(localStorageCartProductCount);
-          const allProductCount = parsedData.map((eachCartData) => eachCartData.product_count);
-          const totalPrice = allProductCount.reduce((acc, num) => acc + num, 0);
-          setLocalStorageCartProductCount(totalPrice);
-        }
-      }
-    }
-  }, [isUserAuthenticatedLoading, isUserAuthenticatedError, isAddingCartToLocalStorage]);
-
-  useEffect(() => {
-    if (allCartData?.data?.length > 0) {
-      const allProductCount = allCartData?.data?.map(
-        (eachCartData) => eachCartData.product_count
-      );
-      const totalPrice = allProductCount.reduce((acc, num) => acc + num, 0);
-      setTotalProductInCart(totalPrice);
-    }
-  }, [allCartData]);
+  const { totalProductInCart, localStorageCartProductCount } = useGetCartCount(
+    allCartData,
+    isUserAuthenticatedLoading,
+    isUserAuthenticatedError
+  );
 
   return (
     <div className="z-40 w-full flex px-2 md:px-5 lg:px-12 fixed bg-white border-b">

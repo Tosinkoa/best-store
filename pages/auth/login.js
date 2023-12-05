@@ -43,7 +43,16 @@ const Login = () => {
       const { error } = result.error.data;
       const errorResult = ErrorGetter(error);
       return toast.warning(errorResult);
-    } else router.push("/product");
+    } else {
+      // Check if loggedin user  have any product in their cart before logging in
+      const localStorageCartProduct = localStorage.getItem("cart_products");
+      if (localStorageCartProduct) {
+        const parsedData = JSON.parse(localStorageCartProduct);
+        const allProductCount = parsedData.map((eachCartData) => eachCartData.product_count);
+        const totalPrice = allProductCount.reduce((acc, num) => acc + num, 0);
+      }
+      router.push("/product");
+    }
   };
 
   return (

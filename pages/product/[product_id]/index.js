@@ -1,7 +1,7 @@
 import AuthorizeHOC from "@/HOC/AuthorizeHOC";
 import { getLayout } from "@/components/Layouts/DashboardLayout";
 import ViewOneProductComponent from "@/components/Product/ViewOneProductComponent";
-import useSetProductInitialValue from "@/components/ReusableHooks/useSetProductInitialValue";
+import useSetProductInitialValue from "@/components/ReusableHooks/ProductHooks/useSetProductInitialValue";
 import { useRouter } from "next/router";
 
 const ViewProductComponent = ({ product_id }) => {
