@@ -11,6 +11,7 @@ import useGetScreenWidth from "../ReusableHooks/useGetScreenWidth";
 import CustomToast from "../01Utils/CustomToast";
 import { useDispatch } from "react-redux";
 import { addedCartToLocalStorageActions } from "@/store/slices/added-cart-to-localstorage";
+import { ErrorGetter } from "../01Utils/ErrorGetter";
 
 const LandingPageHotDeals = () => {
   const dispatch = useDispatch();
@@ -68,7 +69,7 @@ const LandingPageHotDeals = () => {
     // If user has logged in, add cart products to localStorage
     if (!isUserAuthenticatedLoading && isUserAuthenticatedSuccessfully) {
       const body = { product_count: 1 };
-      const result = await addProductToCart({ body, product_id: incomingProduct.product_id });
+      const result = await addProductToCart({ body, product_id: incomingProduct.id });
       if (result.error) {
         const { error } = result.error.data;
         const errorResult = ErrorGetter(error);
