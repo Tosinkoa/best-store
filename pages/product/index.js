@@ -28,4 +28,5 @@ const Product = () => {
   );
 };
 
-export default AuthorizeHOC(Product, getLayout);
+Product.getLayout = getLayout;
+export default Product;

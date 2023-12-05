@@ -48,8 +48,6 @@ const ProductList = ({ productData, isLoggedInSellerProduct = true }) => {
     if (result.data) return toast.success(result.data);
   };
 
-  console.log("productData:", productData);
-
   return (
     <>
       <div className="grid lg:grid-cols-4 md:grid-cols-3 md:gap-4 gap-2 grid-cols-2 ">
@@ -128,7 +126,7 @@ const ProductList = ({ productData, isLoggedInSellerProduct = true }) => {
                   <button
                     disabled={isAddProductToCartLoading}
                     onClick={() => addProductToCartHandler(eachProductData.id)}
-                    className="w-full text-center bg-primary-500 rounded-md shadow font-semibold py-1.5 text-secondary-50"
+                    className="w-full text-center bg-primary-500 rounded-md shadow font-semibold py-2 text-secondary-50"
                   >
                     Add to cart
                   </button>

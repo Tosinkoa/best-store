@@ -23,7 +23,7 @@ const Navbar = ({ smallScreenSidebarHandler }) => {
     useGetLoggedInUserQuery();
 
   const { isMediumAndSmallScreen } = useGetScreenWidth();
-  const [totalProductInCart, setTotalProductInCart] = useState("");
+  const [totalProductInCart, setTotalProductInCart] = useState(null);
 
   useEffect(() => {
     if (allCartData?.data?.length > 0) {

@@ -6,9 +6,10 @@ const CloseButton = ({ closeToast }) => (
   <AiOutlineClose className="text-xl" onClick={closeToast} />
 );
 
-const CustomToast = () => {
+const CustomToast = ({ position }) => {
   return (
     <ToastContainer
+      position={position || "top-right"}
       closeButton={CloseButton}
       toastStyle={{ color: "#7e22ce", backgroundColor: "white" }}
       theme="colored"

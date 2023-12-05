@@ -1,8 +1,7 @@
 import { useState } from "react";
 import { AiFillShop, AiTwotoneSetting } from "react-icons/ai";
-import { BsFillPersonFill } from "react-icons/bs";
+import { BsBellFill, BsFillPersonFill } from "react-icons/bs";
 import { FaHeart, FaHistory, FaShoppingBag, FaShoppingCart } from "react-icons/fa";
-import { MdNotifications } from "react-icons/md";
 import Navbar from "../03Helper/Navbar";
 import SidebarComponent from "../03Helper/SidebarComponent";
 import useGetScreenWidth from "../ReusableHooks/useGetScreenWidth";
@@ -45,7 +44,7 @@ const DashboardLayout = ({ children }) => {
     },
     {
       linkParams: "/notifications",
-      icon: <MdNotifications />,
+      icon: <BsBellFill />,
       name: "Notifications",
     },
     {

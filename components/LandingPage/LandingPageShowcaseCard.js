@@ -20,7 +20,7 @@ const LandingPageShowcaseCard = () => {
         />
         <div className="absolute grid grid-cols-1 md:grid-cols-2 w-full inset-0 justify-between lg:px-40">
           <div className="w-full text-center md:text-left justify-center flex flex-col z-30 px-6 inset-y-0 h-full space-y-3">
-            <div className="relative animate-infinite-rotate h-[28vh] w-[28vh] md:h-[30vh] md:w-[30vh] z-30 flex inset-y-0 my-auto">
+            <div className="relative animate-infinite-rotate h-[190px] w-[190px] md:h-[200px] md:w-[200px] z-30 flex inset-y-0 my-auto">
               <Image
                 src="/assets/images/flower.png"
                 alt="background-color"

@@ -5,7 +5,6 @@ import CustomToast from "@/components/01Utils/CustomToast";
 import { ErrorGetter } from "@/components/01Utils/ErrorGetter";
 import MyInput from "@/components/01Utils/Formik";
 import LoginAndRegisterSidebar from "@/components/Auth/LoginAndRegisterSidebar";
-import { getLayout } from "@/components/Layouts/LoginAndRegisterLayout";
 import { useLoginUserMutation } from "@/store/APIs/authenticationApi";
 import { Form, Formik } from "formik";
 import Link from "next/link";
