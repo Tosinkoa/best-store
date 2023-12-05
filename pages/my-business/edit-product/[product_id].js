@@ -1,7 +1,7 @@
 import AuthorizeHOC from "@/HOC/AuthorizeHOC";
 import { getLayout } from "@/components/Layouts/DashboardLayout";
 import ProductFormAndPreviewTab from "@/components/Product/ProductFormAndPreviewTab";
-import useSetProductInitialValue from "@/components/ReusableHooks/useSetProductInitialValue";
+import useSetProductInitialValue from "@/components/ReusableHooks/ProductHooks/useSetProductInitialValue";
 import { useRouter } from "next/router";
 import { AiFillQuestionCircle } from "react-icons/ai";
 

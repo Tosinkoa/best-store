@@ -8,32 +8,37 @@ import BestAppLogo from "../01Utils/BestAppLogo";
 import useGetScreenWidth from "../ReusableHooks/useGetScreenWidth";
 import Image from "next/legacy/image";
 import Link from "next/link";
+import { useSelector } from "react-redux";
+import { useGetAuthQuery } from "@/store/APIs/authenticationApi";
+import useGetCartCount from "../ReusableHooks/CartHooks/useGetCartCount";
 
 /**
  * @TODO Put email confirmation message inside notification
  */
 
 const Navbar = ({ smallScreenSidebarHandler }) => {
+  const { isMediumAndSmallScreen } = useGetScreenWidth();
+
+  const { data: loggedInUserData, isLoading: isLoggedInUserDataLoading } =
+    useGetLoggedInUserQuery();
+
+  const {
+    isSuccess: isUserAuthenticatedSuccessfully,
+    isLoading: isUserAuthenticatedLoading,
+    isError: isUserAuthenticatedError,
+  } = useGetAuthQuery();
+
   const {
     data: allCartData,
     isLoading: isAllCartDataLoading,
     isError: isAllCartError,
   } = useGetBuyerCartQuery();
-  const { data: loggedInUserData, isLoading: isLoggedInUserDataLoading } =
-    useGetLoggedInUserQuery();
 
-  const { isMediumAndSmallScreen } = useGetScreenWidth();
-  const [totalProductInCart, setTotalProductInCart] = useState(null);
-
-  useEffect(() => {
-    if (allCartData?.data?.length > 0) {
-      const allProductCount = allCartData?.data?.map(
-        (eachCartData) => eachCartData.product_count
-      );
-      const totalPrice = allProductCount.reduce((acc, num) => acc + num, 0);
-      setTotalProductInCart(totalPrice);
-    }
-  }, [allCartData]);
+  const { totalProductInCart, localStorageCartProductCount } = useGetCartCount(
+    allCartData,
+    isUserAuthenticatedLoading,
+    isUserAuthenticatedError
+  );
 
   const sidebarHandler = () => {
     if (isMediumAndSmallScreen) {
@@ -55,12 +60,23 @@ const Navbar = ({ smallScreenSidebarHandler }) => {
           <IoMdNotificationsOutline className="md:text-4xl text-[32px]" />
         </Link>
         <Link href="/cart" passHref className="relative">
-          {!isAllCartDataLoading && !isAllCartError && allCartData?.data?.length > 0 && (
-            <div className="rounded-full -right-1.5 -top-1 bg-red-600 text-secondary-50 w-6 h-6 items-center flex place-content-center absolute text-xs font-light">
-              {totalProductInCart}
-            </div>
-          )}
-          <AiOutlineShoppingCart className="md:text-[34px] text-[32px]" />
+          {!isUserAuthenticatedLoading &&
+            isUserAuthenticatedError &&
+            localStorageCartProductCount && (
+              <div className="rounded-full -right-1.5 -top-1 bg-red-600 text-secondary-50 w-6 h-6 items-center flex place-content-center absolute text-xs font-light">
+                {localStorageCartProductCount}
+              </div>
+            )}
+          {!isUserAuthenticatedLoading &&
+            isUserAuthenticatedSuccessfully &&
+            !isAllCartDataLoading &&
+            !isAllCartError &&
+            allCartData?.data?.length > 0 && (
+              <div className="rounded-full -right-1.5 -top-1 bg-red-600 text-secondary-50 w-6 h-6 items-center flex place-content-center absolute text-xs font-light">
+                {totalProductInCart}
+              </div>
+            )}
+          <AiOutlineShoppingCart className="md:text-[34px] text-[32px] text-gray-600" />
         </Link>
         <div className=" block cursor-pointer" onClick={sidebarHandler}>
           <div className=" w-[35px] h-[35px] relative rounded-full">
