@@ -38,6 +38,7 @@ const OneStore = ({ showEditProductButton }) => {
     };
   }, []);
 
+  console.log("sellerProductsData:", sellerProductsData);
   return (
     <>
       {isSellerAccountSetupDataLoading ? (
@@ -130,14 +131,14 @@ const OneStore = ({ showEditProductButton }) => {
               id="store-details"
             ></div>
             {isSellerProductsLoading && <LoadingUICart />}
-            {!isSellerProductsLoading && sellerProductsData?.data?.length > 1 && (
+            {!isSellerProductsLoading && sellerProductsData?.data?.length > 0 && (
               <ProductList productData={sellerProductsData} />
             )}
 
-            {/* {
-              !isSellerProductsLoading && sellerProductsData?.data?.length < 0 && 
-
-            } */}
+            {!isSellerProductsLoading &&
+              (sellerProductsData?.data?.length < 1 || !sellerProductsData?.data) && (
+                <center className="my-6 font-semibold text-xl">No product added!</center>
+              )}
           </div>
         </div>
       )}
