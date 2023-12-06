@@ -6,6 +6,7 @@ import { ErrorGetter } from "@/components/01Utils/ErrorGetter";
 import MyInput from "@/components/01Utils/Formik";
 import LoginAndRegisterSidebar from "@/components/Auth/LoginAndRegisterSidebar";
 import { useRegisterUserMutation } from "@/store/APIs/authenticationApi";
+import { useAddBulkProductToCartMutation } from "@/store/APIs/cartApi";
 import { Form, Formik } from "formik";
 import Link from "next/link";
 import { useRouter } from "next/router";
@@ -21,6 +22,7 @@ const Register = () => {
   const [registerUser, { isLoading: registerUserIsLoading }] = useRegisterUserMutation();
   const [showPassword, setShowPassword] = useState("password");
   const [showConfirmPassword, setShowConfirmPassword] = useState("password");
+  const [addBulkProductToCart] = useAddBulkProductToCartMutation();
 
   const showPasswordHandler = () => {
     if (showPassword === "password") setShowPassword("text");
@@ -39,7 +41,17 @@ const Register = () => {
       const { error } = result.error.data;
       const errorResult = ErrorGetter(error);
       toast.warning(errorResult);
-    } else router.push("/product");
+    } else {
+      const localStorageCartProduct = localStorage.getItem("cart_products");
+      if (localStorageCartProduct) {
+        const parsedData = JSON.parse(localStorageCartProduct);
+        const body = { cart_products: parsedData };
+        await addBulkProductToCart(body);
+        localStorage.removeItem("cart_products");
+      }
+    }
+
+    router.push("/product");
   };
 
   const validation = Yup.object({

@@ -10,7 +10,7 @@ import CustomToast from "../01Utils/CustomToast";
 import useGetScreenWidth from "../ReusableHooks/useGetScreenWidth";
 import { ShopData } from "../Shop/ShopData";
 
-const ProductList = ({ productData, isLoggedInSellerProduct = true }) => {
+const ProductList = ({ productData, showEditProductButton }) => {
   const router = useRouter();
   const [overallProductFiveStar, setOverallProductFiveStar] = useState(0);
   const [totalRatings, setTotalRatings] = useState(0);
@@ -75,7 +75,7 @@ const ProductList = ({ productData, isLoggedInSellerProduct = true }) => {
               </Link>
               <div className="flex flex-col mt-1 py-1 rounded-b-md px-1.5 md:px-2 relative bg-white h-[155px]">
                 {/* Shop Location */}
-                {!isLoggedInSellerProduct && (
+                {!showEditProductButton && (
                   <div className="flex flex-row text-xl text-secondary-600 items-center space-x-1">
                     {eachProductData.business_logo ? (
                       <Image
@@ -119,10 +119,10 @@ const ProductList = ({ productData, isLoggedInSellerProduct = true }) => {
                   <i data-star={overallProductFiveStar} className="text-lg"></i>
                   <p className="text-xs">({totalRatings})</p>
                 </div>
-                {((isMediumAndSmallScreen && !isLoggedInSellerProduct) ||
+                {((isMediumAndSmallScreen && !showEditProductButton) ||
                   (eachProductData.id === hoveredCardID &&
                     isLargeScreen &&
-                    !isLoggedInSellerProduct)) && (
+                    !showEditProductButton)) && (
                   <button
                     disabled={isAddProductToCartLoading}
                     onClick={() => addProductToCartHandler(eachProductData.id)}
@@ -131,10 +131,10 @@ const ProductList = ({ productData, isLoggedInSellerProduct = true }) => {
                     Add to cart
                   </button>
                 )}
-                {((isMediumAndSmallScreen && isLoggedInSellerProduct) ||
+                {((isMediumAndSmallScreen && showEditProductButton) ||
                   (eachProductData.id === hoveredCardID &&
                     isLargeScreen &&
-                    isLoggedInSellerProduct)) && (
+                    showEditProductButton)) && (
                   <button
                     onClick={() =>
                       router.push(`/my-business/edit-product/${eachProductData.id}`)

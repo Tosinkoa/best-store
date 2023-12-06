@@ -18,7 +18,7 @@ const Product = () => {
     <div className="p-4 md:p-8">
       {isAllProductDataLoading && <LoadingUICart />}
       {!isAllProductDataLoading && allProductData?.data?.length > 0 && (
-        <ProductList productData={allProductData} isLoggedInSellerProduct={false} />
+        <ProductList productData={allProductData} />
       )}
       {!isAllProductDataLoading &&
         (allProductData?.data?.length < 1 || !allProductData?.data) && (
