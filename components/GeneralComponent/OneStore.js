@@ -10,7 +10,7 @@ import { BsTelephone } from "react-icons/bs";
 import LoadingUICart from "../01Utils/LoadingUICart";
 import ProductList from "./ProductList";
 
-const OneStore = ({ isLoggedInSellerProduct }) => {
+const OneStore = ({ showEditProductButton }) => {
   const [isVisible, setIsVisible] = useState(false);
   const { data: sellerAccountSetupData, isLoading: isSellerAccountSetupDataLoading } =
     useGetLoggedInSellerQuery();
@@ -115,7 +115,7 @@ const OneStore = ({ isLoggedInSellerProduct }) => {
             )} */}
           </div>
           <div className="lg:px-10 md:px-3 gap-y-3 px-4 mb-6">
-            {isLoggedInSellerProduct && (
+            {showEditProductButton && (
               <Link
                 passHref
                 href="/my-business/new-product"
@@ -126,14 +126,18 @@ const OneStore = ({ isLoggedInSellerProduct }) => {
               </Link>
             )}
             <div
-              className={`${!isLoggedInSellerProduct && "my-3"} flex border border-primary-50`}
+              className={`${!showEditProductButton && "my-3"} flex border border-primary-50`}
               id="store-details"
             ></div>
-            {isSellerProductsLoading ? (
-              <LoadingUICart />
-            ) : (
+            {isSellerProductsLoading && <LoadingUICart />}
+            {!isSellerProductsLoading && sellerProductsData?.data?.length > 1 && (
               <ProductList productData={sellerProductsData} />
             )}
+
+            {/* {
+              !isSellerProductsLoading && sellerProductsData?.data?.length < 0 && 
+
+            } */}
           </div>
         </div>
       )}

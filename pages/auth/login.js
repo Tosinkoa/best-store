@@ -6,6 +6,7 @@ import { ErrorGetter } from "@/components/01Utils/ErrorGetter";
 import MyInput from "@/components/01Utils/Formik";
 import LoginAndRegisterSidebar from "@/components/Auth/LoginAndRegisterSidebar";
 import { useLoginUserMutation } from "@/store/APIs/authenticationApi";
+import { useAddBulkProductToCartMutation } from "@/store/APIs/cartApi";
 import { Form, Formik } from "formik";
 import Link from "next/link";
 import { useRouter } from "next/router";
@@ -21,6 +22,7 @@ const Login = () => {
   const [remember, setRemember] = useState(false);
   const [showPassword, setShowPassword] = useState("password");
   const [loginUser, { isLoading: loginUserIsLoading }] = useLoginUserMutation();
+  const [addBulkProductToCart] = useAddBulkProductToCartMutation();
 
   const showPasswordHandler = () => {
     if (showPassword === "password") setShowPassword("text");
@@ -48,8 +50,9 @@ const Login = () => {
       const localStorageCartProduct = localStorage.getItem("cart_products");
       if (localStorageCartProduct) {
         const parsedData = JSON.parse(localStorageCartProduct);
-        const allProductCount = parsedData.map((eachCartData) => eachCartData.product_count);
-        const totalPrice = allProductCount.reduce((acc, num) => acc + num, 0);
+        const body = { cart_products: parsedData };
+        await addBulkProductToCart(body);
+        localStorage.removeItem("cart_products");
       }
       router.push("/product");
     }

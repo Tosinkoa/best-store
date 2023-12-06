@@ -25,6 +25,14 @@ export const cartApi = fetcherApi.injectEndpoints({
         }),
         invalidatesTags: ["ForCart"],
       }),
+      addBulkProductToCart: build.mutation({
+        query: (body) => ({
+          url: "add-bulk-product-to-cart",
+          method: "post",
+          body,
+        }),
+        invalidatesTags: ["ForCart"],
+      }),
     };
   },
 });
@@ -33,4 +41,5 @@ export const {
   useGetBuyerCartQuery,
   useAddProductToCartMutation,
   useRemoveProductFromCartMutation,
+  useAddBulkProductToCartMutation,
 } = cartApi;
