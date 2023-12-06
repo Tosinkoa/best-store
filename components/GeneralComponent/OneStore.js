@@ -84,7 +84,7 @@ const OneStore = ({ showEditProductButton }) => {
                     </div>
                   </div>
                 </div>
-                <p className="flex w-full overflow-y-auto h-[76%] p-3">
+                <p className="flex w-full overflow-y-auto h-[76%] p-3 rounded-md bg-primary-100">
                   {sellerAccountSetupData?.data?.about}
                 </p>
               </div>
