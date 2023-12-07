@@ -24,7 +24,7 @@ const SidebarComponent = ({
         passHref
         className=" font-bold pt-2 pl-4 h-[55px] border-none shadow-none items-center"
       >
-        {router.pathname.includes("admin-dashboard") ? "Admin Dashboard" : <BestAppLogo />}
+        <BestAppLogo />
       </Link>
 
       <div className=" flex h-full w-full flex-col relative font-semibold  py-4 gap-y-0.5">

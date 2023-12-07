@@ -98,6 +98,15 @@ const LandingPageNavbar = ({ smallScreenSidebarHandler }) => {
               )}
               {!isUserAuthenticatedLoading && isUserAuthenticatedSuccessfully && (
                 <Link
+                  href="/product"
+                  passHref
+                  className="text-xs hover:bg-primary-100 cursor-pointer border border-gray-400 px-4 py-2 rounded"
+                >
+                  <p>Shop</p>
+                </Link>
+              )}
+              {!isUserAuthenticatedLoading && isUserAuthenticatedSuccessfully && (
+                <Link
                   href="/auth/logout"
                   passHref
                   className="text-xs hover:bg-primary-100 cursor-pointer border border-gray-400 px-4 py-2 rounded"
