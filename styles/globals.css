@@ -58,15 +58,15 @@ input[type="number"] {
 
 /*----------------------Tables----------------*/
 .table {
-  @apply w-full  lg:text-base text-sm md:text-base font-semibold text-left bg-gray-50 relative;
+  @apply w-full  lg:text-base text-sm md:text-base font-semibold text-left;
 }
 
 .table_head {
-  @apply justify-center uppercase  bg-inherit w-full;
+  @apply justify-center text-xs uppercase bg-inherit w-full bg-primary-50;
 }
 
 .table_row {
-  @apply border-b-2  md:font-bold font-semibold;
+  @apply border-b md:font-bold font-semibold;
 }
 
 .table_head_row {

@@ -183,8 +183,6 @@ const SuggestedProduct = ({ subCartegoryID }) => {
       sub_category_id: subCartegoryID,
     });
 
-  console.log("suggestedProductData:", suggestedProductData);
-
   return (
     <>
       {isSuggestedProductDataLoading && <LoadingUICart />}
