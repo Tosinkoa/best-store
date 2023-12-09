@@ -107,7 +107,7 @@ export const MyDialog = ({ dialogTitle, children, isModalOpen, closeModal }) => 
             onClick={closeModal}
             className="fixed inset-0 lg:left-[250px] top-[55px] z-30 bg-black bg-opacity-25"
           />
-        </Transition.Child>
+        </Transition.Child>gi
         <Transition.Child
           as={Fragment}
           enter="ease-out duration-300"
