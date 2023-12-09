@@ -9,6 +9,7 @@ import { toast } from "react-toastify";
 import CustomToast from "../01Utils/CustomToast";
 import useGetScreenWidth from "../ReusableHooks/useGetScreenWidth";
 import { ShopData } from "../Shop/ShopData";
+import { ErrorGetter } from "../01Utils/ErrorGetter";
 
 const ProductList = ({ productData, showEditProductButton }) => {
   const router = useRouter();
