@@ -73,7 +73,7 @@ const DashboardLayout = ({ children }) => {
           )}
         </>
         <div className="text-sm md:text-base mt-[55px] lg:w-[calc(100%_-_250px)]  lg:ml-auto flex relative w-full h-[calc(100%_-_55px)]">
-          <div className="w-full h-full overflow-y-auto">{children}</div>
+          <div className="w-full h-full overflow-y-auto p-4 md:p-8">{children}</div>
         </div>
       </div>
     </div>

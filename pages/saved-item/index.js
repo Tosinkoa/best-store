@@ -8,13 +8,8 @@ import { AiOutlineHeart } from "react-icons/ai";
 const SaveItem = () => {
   const { data: savedItemData, isLoading: isSavedItemDataLoading } = useGetSavedItemQuery();
 
-  console.log(
-    "!isSavedItemDataLoading && savedItemData?.data > 0:",
-    !isSavedItemDataLoading && savedItemData?.data?.length > 0
-  );
-  console.log(savedItemData?.data);
   return (
-    <div className="p-4 md:p-8">
+    <div>
       {isSavedItemDataLoading && <LoadingUICart />}
       {!isSavedItemDataLoading && savedItemData?.data?.length > 0 && (
         <ProductList productData={savedItemData} />

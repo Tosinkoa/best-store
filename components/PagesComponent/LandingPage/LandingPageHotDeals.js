@@ -6,12 +6,12 @@ import Link from "next/link";
 import { useState } from "react";
 import { BsFire } from "react-icons/bs";
 import { toast } from "react-toastify";
-import NumberFormatter from "../01Utils/NumberFormatter";
-import useGetScreenWidth from "../ReusableHooks/useGetScreenWidth";
-import CustomToast from "../01Utils/CustomToast";
+import NumberFormatter from "../../01Utils/NumberFormatter";
+import useGetScreenWidth from "../../ReusableHooks/useGetScreenWidth";
+import CustomToast from "../../01Utils/CustomToast";
 import { useDispatch } from "react-redux";
 import { addedCartToLocalStorageActions } from "@/store/slices/added-cart-to-localstorage";
-import { ErrorGetter } from "../01Utils/ErrorGetter";
+import { ErrorGetter } from "../../01Utils/ErrorGetter";
 
 const LandingPageHotDeals = () => {
   const dispatch = useDispatch();

@@ -2,10 +2,10 @@ import Image from "next/legacy/image";
 import { ProductDummyData } from "./ProductDummyData";
 import { AiFillStar, AiOutlineStar } from "react-icons/ai";
 import { PiGlobeStandFill } from "react-icons/pi";
-import NumberFormatter from "../01Utils/NumberFormatter";
+import NumberFormatter from "../../01Utils/NumberFormatter";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 import { useGetAllProductsQuery } from "@/store/APIs/productApi";
-import useGetScreenWidth from "../ReusableHooks/useGetScreenWidth";
+import useGetScreenWidth from "../../ReusableHooks/useGetScreenWidth";
 import Link from "next/link";
 import { useState } from "react";
 

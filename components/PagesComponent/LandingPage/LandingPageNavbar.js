@@ -9,8 +9,8 @@ import { AiOutlineShoppingCart } from "react-icons/ai";
 import { BiSearch } from "react-icons/bi";
 import { HiOutlineUserCircle } from "react-icons/hi";
 import { useSelector } from "react-redux";
-import BestAppLogo from "../01Utils/BestAppLogo";
-import useGetCartCount from "../ReusableHooks/CartHooks/useGetCartCount";
+import BestAppLogo from "@/components/01Utils/BestAppLogo";
+import useGetCartCount from "@/components/ReusableHooks/CartHooks/useGetCartCount";
 /**
  * @TODO Put email confirmation message inside notification
  */

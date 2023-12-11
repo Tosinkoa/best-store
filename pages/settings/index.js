@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Tab } from "@headlessui/react";
-import BusinessSetting from "@/components/Settings/BusinessSetting";
-import ProfileSettings from "@/components/Settings/ProfileSettings";
+import BusinessSetting from "@/components/PagesComponent/Settings/BusinessSetting";
+import ProfileSettings from "@/components/PagesComponent/Settings/ProfileSettings";
 import { getLayout } from "@/components/Layouts/DashboardLayout";
 import AuthorizeHOC from "@/HOC/AuthorizeHOC";
 
@@ -14,9 +14,9 @@ const Settings = () => {
   const tabData = [<ProfileSettings />, <BusinessSetting />];
 
   return (
-    <div className="lg:px-28 px-6 md:px-10 mx-auto py-8 bg-primary-50">
+    <div className="mx-auto bg-primary-50">
       <Tab.Group>
-        <div className="fixed top-[55px] z-10 h-fit  w-full bg-primary-50">
+        <div className="fixed top-[55px] z-10 h-fit w-full bg-primary-50">
           <Tab.List className=" w-fit flex h-fit border-b space-x-5 ">
             {tabButtons.map((eachTabButtons, index) => (
               <Tab

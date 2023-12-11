@@ -4,7 +4,7 @@ import BestAppLogo from "@/components/01Utils/BestAppLogo";
 import CustomToast from "@/components/01Utils/CustomToast";
 import { ErrorGetter } from "@/components/01Utils/ErrorGetter";
 import MyInput from "@/components/01Utils/Formik";
-import LoginAndRegisterSidebar from "@/components/Auth/LoginAndRegisterSidebar";
+import LoginAndRegisterSidebar from "@/components/PagesComponent/Auth/LoginAndRegisterSidebar";
 import { useRegisterUserMutation } from "@/store/APIs/authenticationApi";
 import { useAddBulkProductToCartMutation } from "@/store/APIs/cartApi";
 import { Form, Formik } from "formik";

@@ -4,7 +4,7 @@ import { AiOutlineArrowLeft, AiOutlineArrowRight } from "react-icons/ai";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick-theme.css";
 import "slick-carousel/slick/slick.css";
-import BestAppLogo from "../01Utils/BestAppLogo";
+import BestAppLogo from "@/components/01Utils/BestAppLogo";
 
 const LoginAndRegisterSidebar = ({ children }) => {
   const SampleNextArrow = ({ onClick }) => {

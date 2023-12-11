@@ -10,11 +10,11 @@ export const authenticationApi = fetcherApi.injectEndpoints({
         query: (body) => ({ url: "login", method: "post", body: body }),
       }),
       getAuth: build.query({
-        query: () => ({ url: "auth" }),
+        query: () => ({ url: "check-user-auth" }),
         providesTags: ["ForAuth"],
       }),
       logoutUser: build.mutation({
-        query: () => ({ url: "logout", method: "post" }),
+        query: () => ({ url: "logout-user", method: "post" }),
         invalidatesTags: ["ForAuth"],
       }),
     };

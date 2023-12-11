@@ -1,15 +1,13 @@
+import { useGetAuthQuery } from "@/store/APIs/authenticationApi";
 import { useGetBuyerCartQuery } from "@/store/APIs/cartApi";
 import { useGetLoggedInUserQuery } from "@/store/APIs/userApi";
-import { useEffect, useState } from "react";
+import Image from "next/legacy/image";
+import Link from "next/link";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import { HiOutlineUserCircle } from "react-icons/hi";
 import { IoMdNotificationsOutline } from "react-icons/io";
-import BestAppLogo from "../01Utils/BestAppLogo";
 import useGetScreenWidth from "../ReusableHooks/useGetScreenWidth";
-import Image from "next/legacy/image";
-import Link from "next/link";
-import { useSelector } from "react-redux";
-import { useGetAuthQuery } from "@/store/APIs/authenticationApi";
+import BestAppLogo from "../01Utils/BestAppLogo";
 import useGetCartCount from "../ReusableHooks/CartHooks/useGetCartCount";
 
 /**

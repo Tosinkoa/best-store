@@ -1,5 +1,5 @@
 import { TiFlash } from "react-icons/ti";
-import NumberFormatter from "../01Utils/NumberFormatter";
+import NumberFormatter from "../../01Utils/NumberFormatter";
 import { MdKeyboardArrowRight } from "react-icons/md";
 import Image from "next/legacy/image";
 import Slider from "react-slick";
