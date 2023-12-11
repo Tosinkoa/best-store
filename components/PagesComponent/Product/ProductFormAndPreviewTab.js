@@ -2,16 +2,16 @@ import { Tab } from "@headlessui/react";
 import ProductForm from "./ProductForm";
 import ViewOneProductComponent from "./ViewOneProductComponent";
 import { useEffect, useRef, useState } from "react";
-import useGetSubCategories from "../ReusableHooks/useGetSubCategories";
-import useGetCategories from "../ReusableHooks/useGetCategories";
+import useGetSubCategories from "@/components/ReusableHooks/useGetSubCategories";
+import useGetCategories from "@/components/ReusableHooks/useGetCategories";
 import { MdOutlineEventNote } from "react-icons/md";
 import { useFormik } from "formik";
 import { useCreateNewProductMutation, useEditProductMutation } from "@/store/APIs/productApi";
-import { productFormValidator } from "../01Utils/Validators/productFormValidator";
+import { productFormValidator } from "@/components/01Utils/Validators/productFormValidator";
 import { toast } from "react-toastify";
-import CustomToast from "../../01Utils/CustomToast";
+import CustomToast from "@/components/01Utils/CustomToast";
 import { useRouter } from "next/router";
-import { ErrorGetter } from "../../01Utils/ErrorGetter";
+import { ErrorGetter } from "@/components/01Utils/ErrorGetter";
 
 /**
  * @Checkpoint Rework formik validation

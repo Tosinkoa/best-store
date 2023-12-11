@@ -8,7 +8,7 @@ import { useEffect, useState } from "react";
 import { AiOutlineCamera } from "react-icons/ai";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import LoadingUICart from "../01Utils/LoadingUICart";
+import LoadingUICart from "@/components/01Utils/LoadingUICart";
 
 const ProfileSettings = () => {
   const router = useRouter();
