@@ -1,9 +1,8 @@
-import { useState } from "react";
-import { Tab } from "@headlessui/react";
+import AuthorizeHOC from "@/HOC/AuthorizeHOC";
+import { getLayout } from "@/components/Layouts/DashboardLayout";
 import BusinessSetting from "@/components/PagesComponent/Settings/BusinessSetting";
 import ProfileSettings from "@/components/PagesComponent/Settings/ProfileSettings";
-import { getLayout } from "@/components/Layouts/DashboardLayout";
-import AuthorizeHOC from "@/HOC/AuthorizeHOC";
+import { Tab } from "@headlessui/react";
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
