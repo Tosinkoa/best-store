@@ -1,6 +1,6 @@
 import AuthorizeHOC from "@/HOC/AuthorizeHOC";
 import { getLayout } from "@/components/Layouts/DashboardLayout";
-import ViewOneProductComponent from "@/components/Product/ViewOneProductComponent";
+import ViewOneProductComponent from "@/components/PagesComponent/Product/ViewOneProductComponent";
 import useSetProductInitialValue from "@/components/ReusableHooks/ProductHooks/useSetProductInitialValue";
 import { useRouter } from "next/router";
 

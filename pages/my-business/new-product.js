@@ -1,8 +1,6 @@
 import { getLayout } from "@/components/Layouts/DashboardLayout";
-import ProductFormAndPreviewTab from "@/components/Product/ProductFormAndPreviewTab";
-import { Popover } from "@headlessui/react";
+import ProductFormAndPreviewTab from "@/components/PagesComponent/Product/ProductFormAndPreviewTab";
 import { AiFillQuestionCircle } from "react-icons/ai";
-import { BsThreeDots } from "react-icons/bs";
 
 /**
  * @todo Make colors gradient
@@ -23,7 +21,7 @@ const NewProduct = () => {
   };
 
   return (
-    <div className="flex flex-col p-4 lg:px-8 py-4  h-full">
+    <div className="flex flex-col lg:px-8 h-full">
       <div className="justify-between w-full flex">
         <div className="font-semibold flex text-lg items-center space-x-2">
           <span className="text-primary-800">New Product</span>

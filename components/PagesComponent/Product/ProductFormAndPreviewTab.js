@@ -9,9 +9,9 @@ import { useFormik } from "formik";
 import { useCreateNewProductMutation, useEditProductMutation } from "@/store/APIs/productApi";
 import { productFormValidator } from "../01Utils/Validators/productFormValidator";
 import { toast } from "react-toastify";
-import CustomToast from "../01Utils/CustomToast";
+import CustomToast from "../../01Utils/CustomToast";
 import { useRouter } from "next/router";
-import { ErrorGetter } from "../01Utils/ErrorGetter";
+import { ErrorGetter } from "../../01Utils/ErrorGetter";
 
 /**
  * @Checkpoint Rework formik validation

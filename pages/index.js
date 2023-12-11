@@ -1,13 +1,13 @@
 import WebsiteMetadata from "@/components/00-WebsiteMetadata/WebsiteMetadata";
 import Footer from "@/components/03Helper/Footer";
-import LandingPageBanner from "@/components/LandingPage/LandingPageBanner";
-import LandingPageBestSelling from "@/components/LandingPage/LandingPageBestSelling";
-import LandingPageFlashDeals from "@/components/LandingPage/LandingPageFlashDeals";
-import LandingPageHotDeals from "@/components/LandingPage/LandingPageHotDeals";
-import LandingPageInsight from "@/components/LandingPage/LandingPageInsight";
-import LandingPageShowcaseCard from "@/components/LandingPage/LandingPageShowcaseCard";
-import LandingPageSponsors from "@/components/LandingPage/LandingPageSponsors";
-import LandingPageSupport from "@/components/LandingPage/LandingPageSupport";
+import LandingPageBanner from "@/components/PagesComponent/LandingPage/LandingPageBanner";
+import LandingPageBestSelling from "@/components/PagesComponent/LandingPage/LandingPageBestSelling";
+import LandingPageFlashDeals from "@/components/PagesComponent/LandingPage/LandingPageFlashDeals";
+import LandingPageHotDeals from "@/components/PagesComponent/LandingPage/LandingPageHotDeals";
+import LandingPageInsight from "@/components/PagesComponent/LandingPage/LandingPageInsight";
+import LandingPageShowcaseCard from "@/components/PagesComponent/LandingPage/LandingPageShowcaseCard";
+import LandingPageSponsors from "@/components/PagesComponent/LandingPage/LandingPageSponsors";
+import LandingPageSupport from "@/components/PagesComponent/LandingPage/LandingPageSupport";
 
 import { getLayout } from "@/components/Layouts/LandingPageLayout";
 

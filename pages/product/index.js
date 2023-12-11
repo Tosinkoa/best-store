@@ -15,7 +15,7 @@ const Product = () => {
   });
 
   return (
-    <div className="p-4 md:p-8">
+    <div>
       {isAllProductDataLoading && <LoadingUICart />}
       {!isAllProductDataLoading && allProductData?.data?.length > 0 && (
         <ProductList productData={allProductData} />

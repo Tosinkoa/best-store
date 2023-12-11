@@ -1,7 +1,6 @@
 import Link from "next/link";
-import { MdLocationPin, MdOutlinePhoneAndroid } from "react-icons/md";
-import BestAppLogo from "../01Utils/BestAppLogo";
 import { BsFillCartCheckFill } from "react-icons/bs";
+import { MdLocationPin, MdOutlinePhoneAndroid } from "react-icons/md";
 
 const Footer = () => {
   return (

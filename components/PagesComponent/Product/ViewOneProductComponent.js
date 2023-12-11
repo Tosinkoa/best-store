@@ -7,13 +7,13 @@ import { useRouter } from "next/router";
 import { useState } from "react";
 import { AiOutlineHeart, AiOutlineMinus, AiOutlinePlus } from "react-icons/ai";
 import { BsTwitter } from "react-icons/bs";
-import { ErrorGetter } from "../01Utils/ErrorGetter";
+import { ErrorGetter } from "../../01Utils/ErrorGetter";
 import { FaFacebookF } from "react-icons/fa";
 import { MdOutlineImageNotSupported } from "react-icons/md";
 import ImageGallery from "react-image-gallery";
 import "react-image-gallery/styles/css/image-gallery.css";
 import { toast } from "react-toastify";
-import CustomToast from "../01Utils/CustomToast";
+import CustomToast from "../../01Utils/CustomToast";
 import LoadingUICart from "../01Utils/LoadingUICart";
 
 const ViewOneProductComponent = ({ productValues, isProductModiification }) => {
