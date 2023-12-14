@@ -252,3 +252,7 @@ input[type="number"] {
 [data-star^="5"]::after {
   @apply w-full;
 }
+
+.code-input-bg {
+  @apply flex flex-col items-center justify-center min-h-screen bg-primary-50;
+}
