@@ -11,11 +11,15 @@ export const authenticationApi = fetcherApi.injectEndpoints({
       }),
       getAuth: build.query({
         query: () => ({ url: "check-user-auth" }),
-        providesTags: ["ForAuth"],
       }),
       logoutUser: build.mutation({
         query: () => ({ url: "logout-user", method: "post" }),
-        invalidatesTags: ["ForAuth"],
+      }),
+      validateUserOtp: build.mutation({
+        query: (body) => ({ url: "validate-user-otp", method: "post", body }),
+      }),
+      createUserOtp: build.query({
+        query: () => ({ url: "create-user-otp" }),
       }),
     };
   },
@@ -26,4 +30,6 @@ export const {
   useLogoutUserMutation,
   useRegisterUserMutation,
   useLoginUserMutation,
+  useValidateUserOtpMutation,
+  useCreateUserOtpQuery,
 } = authenticationApi;
