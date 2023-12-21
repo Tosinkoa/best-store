@@ -55,8 +55,8 @@ const LoginAndRegisterSidebar = ({ children }) => {
     },
   ];
   return (
-    <div className="grid md:grid-cols-7 h-[100vh] overflow-hidden">
-      <div className="md:col-span-4 hidden md:block h-[100vh] relative">
+    <div className="grid md:grid-cols-7 h-[100dvh] overflow-hidden">
+      <div className="md:col-span-4 hidden md:block h-[100dvh] relative">
         <Link
           href="/"
           passHref
@@ -66,7 +66,7 @@ const LoginAndRegisterSidebar = ({ children }) => {
         </Link>
         <Slider {...settings}>
           {previewImages?.map((eachPreviewData, index) => (
-            <div key={index} className="h-[100vh] w-full relative">
+            <div key={index} className="h-[100dvh] w-full relative">
               <div className="absolute inset-0 bg-black opacity-50 flex z-10"></div>
               <p className="absolute inset-0 w-10/12 h-fit m-auto text-secondary-100 z-10 flex font-medium text-xl lg:text-3xl text-center">
                 Lorem Ipsum is simply dummy text of the printing and typesetting industry.

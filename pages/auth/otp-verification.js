@@ -42,7 +42,7 @@ const CodeInput = () => {
       {isCreateUserOtpDataLoading && <LoadingUIWithLogo />}
       {!isCreateUserOtpDataLoading && isCreateUserOtpDataSuccess && (
         <div className="code-input-bg">
-          <div className="flex flex-col gap-y-4 items-center justify-center h-fit w-[95%] max-w-[500px] rounded-xl bg-white py-20 border-neutral-200">
+          <div className="flex flex-col gap-y-4 items-center justify-center h-fit w-[95%] max-w-[550px] rounded-xl bg-white py-20 border-neutral-200">
             <h1 className="font-semibold text-2xl">OTP Verification</h1>
             <p className="bg-green-100 p-4 rounded-md text-center">
               We've sent a verification code to your email.

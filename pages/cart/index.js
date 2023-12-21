@@ -77,7 +77,7 @@ const Cart = () => {
   };
 
   return (
-    <div className="h-[calc(100vh_-_55px)] top-[55px] md:items-center md:flex">
+    <div className="h-[calc(100dvh_-_55px)] top-[55px] md:items-center md:flex">
       <div className="grid grid-cols-1 md:grid-cols-5 w-full inset-0 p-3 lg:px-10 md:gap-x-4 gap-y-4  lg:gap-x-8">
         <div className="col-span-3">
           <div className="flex  flex-col w-full rounded-md gap-y-3 shadow-md lg:p-8 p-5 border-secondary-300 bg-white">

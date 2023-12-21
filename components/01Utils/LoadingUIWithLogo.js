@@ -3,7 +3,7 @@ import Image from "next/legacy/image";
 
 const LoadingUIWithLogo = () => {
   return (
-    <div className="flex min-h-[calc(100vh_-_55px)] w-full">
+    <div className="flex min-h-[calc(100dvh-_55px)] w-full">
       <div className="relative inset-0 m-auto h-28 w-28">
         <Image
           src="/assets/gif/cart-animation.gif"

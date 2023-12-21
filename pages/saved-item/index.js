@@ -16,7 +16,7 @@ const SaveItem = () => {
       )}
       {!isSavedItemDataLoading &&
         (savedItemData?.data?.length < 1 || !savedItemData?.data) && (
-          <div className="h-[calc(100vh_-_55px)] w-full flex">
+          <div className="h-[calc(100dvh_-_55px)] w-full flex">
             <div className="h-fit  my-auto flex w-fit inset-0 mx-auto flex-col space-y-2">
               <AiOutlineHeart className="text-6xl animate-breathing-object flex mx-auto text-primary-800" />
               <p className="font-semibold text-lg">No Saved Product!</p>

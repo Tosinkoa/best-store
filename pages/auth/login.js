@@ -61,7 +61,7 @@ const Login = () => {
   return (
     <WebsiteMetadata>
       <LoginAndRegisterSidebar>
-        <div className="flex w-full h-[100vh] relative">
+        <div className="flex w-full h-[100dvh] relative">
           <div className="w-full px-7 lg:px-20 h-fit md:my-auto mt-16  text-secondary-600">
             <Link href="/" passHref className=" md:hidden text-primary-500 text-2xl mb-10">
               <BestAppLogo />

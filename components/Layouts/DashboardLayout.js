@@ -1,65 +1,20 @@
 import { useState } from "react";
-import { AiFillShop, AiTwotoneSetting } from "react-icons/ai";
-import { BsBellFill, BsFillPersonFill } from "react-icons/bs";
-import { FaHeart, FaHistory, FaShoppingBag, FaShoppingCart } from "react-icons/fa";
-import Navbar from "../03Helper/Navbar";
-import SidebarComponent from "../03Helper/SidebarComponent";
+import DashboardNavbar from "../Navbars/DashboardNavbar";
+import DashboardSidebar from "../Sidebars/DashboardSidebar";
 import useGetScreenWidth from "../ReusableHooks/useGetScreenWidth";
 import { getLayout as getSiteLayout } from "./Layout";
+import { sidebarNavButtons } from "./NavigationLinks/sidebarNavButtons";
 
 const DashboardLayout = ({ children }) => {
   const [showSmallScreenSidebar, setShowSmallScreenSidebar] = useState(false);
   const { isMediumAndSmallScreen } = useGetScreenWidth();
 
-  const sidebarNavButtons = [
-    {
-      linkParams: "/product",
-      icon: <FaShoppingBag />,
-      name: "Shop",
-    },
-    {
-      linkParams: "/business",
-      icon: <AiFillShop />,
-      name: "Business",
-    },
-    {
-      linkParams: "/cart",
-      icon: <FaShoppingCart />,
-      name: "Cart",
-    },
-    {
-      linkParams: "/sale-history",
-      icon: <FaHistory />,
-      name: "Sale History",
-    },
-    {
-      linkParams: "/saved-item",
-      icon: <FaHeart />,
-      name: "Saved Item",
-    },
-    {
-      linkParams: "/my-business",
-      icon: <BsFillPersonFill />,
-      name: "My Business",
-    },
-    {
-      linkParams: "/notifications",
-      icon: <BsBellFill />,
-      name: "Notifications",
-    },
-    {
-      linkParams: "/settings",
-      icon: <AiTwotoneSetting />,
-      name: "Settings",
-    },
-  ];
-
   return (
-    <div className="text-secondary-700 text-sm md:text-sm relative bg-primary-50 overflow-hidden bottom-0 h-[100vh] font-roboto">
-      <Navbar smallScreenSidebarHandler={() => setShowSmallScreenSidebar(true)} />
+    <div className="text-secondary-700 text-sm md:text-sm relative bg-primary-50 overflow-hidden bottom-0 h-[100dvh] font-roboto">
+      <DashboardNavbar smallScreenSidebarHandler={() => setShowSmallScreenSidebar(true)} />
       <div className="flex relative w-full h-full">
         <>
-          <SidebarComponent
+          <DashboardSidebar
             sidebarNavButtons={sidebarNavButtons}
             isMediumAndSmallScreen={isMediumAndSmallScreen}
             showSmallScreenSidebar={showSmallScreenSidebar}
