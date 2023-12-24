@@ -1812,10 +1812,10 @@ wavesurfer-react@^3.0.1:
   resolved "https://registry.yarnpkg.com/wavesurfer-react/-/wavesurfer-react-3.0.1.tgz#bd15c3026f8339ee6c0cc63b09eb525d8a404e2d"
   integrity sha512-J5lPkaPEcigK5zwIuZSNiHLQavi5W9n0kp9AwCSmq9JtICk6utYXVFjk1OpEkAytgyaZI0rCVg/Mbp6hti9uMw==
 
-wavesurfer.js@^7.5.3:
-  version "7.5.3"
-  resolved "https://registry.yarnpkg.com/wavesurfer.js/-/wavesurfer.js-7.5.3.tgz#82ea35298b297849150a661107bed3f57d2c67d9"
-  integrity sha512-nYK6svXBJaQAuIOa9YQ69njwRs8OnD1FkGE0uVRVuci2STQGsaEVJg13NEr3X02lXAh1ggllwqbh3JLcpG9c9A==
+wavesurfer.js@^7.5.4:
+  version "7.5.4"
+  resolved "https://registry.yarnpkg.com/wavesurfer.js/-/wavesurfer.js-7.5.4.tgz#908104bcc957196ebc2d9aeb7b5947cfa3f3fe8e"
+  integrity sha512-GdqojZTe/jHltIaF0d1XbodqHX5t6RQxWykvueV+MUWA/A7xPsXeDZzhgADEoyhbdjxt4Y2+8H0WxzXL1PlsHA==
 
 webidl-conversions@^3.0.0:
   version "3.0.1"

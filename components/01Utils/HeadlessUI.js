@@ -2,6 +2,7 @@ import { Dialog, Listbox, Switch, Transition } from "@headlessui/react";
 import { Fragment, useState } from "react";
 import { AiFillDelete, AiFillInfoCircle, AiOutlineClose } from "react-icons/ai";
 import { IoMdArrowDropdown, IoMdArrowDropup } from "react-icons/io";
+import Image from "next/legacy/image";
 
 export const MyListbox = ({ options, label, labelIcon, getSelectedData, selected }) => {
   return (
@@ -107,7 +108,7 @@ export const MyDialog = ({ dialogTitle, children, isModalOpen, closeModal }) => 
             onClick={closeModal}
             className="fixed inset-0 lg:left-[250px] top-[55px] z-30 bg-black bg-opacity-25"
           />
-        </Transition.Child>gi
+        </Transition.Child>
         <Transition.Child
           as={Fragment}
           enter="ease-out duration-300"
@@ -128,6 +129,48 @@ export const MyDialog = ({ dialogTitle, children, isModalOpen, closeModal }) => 
               />
             </div>
             <>{children}</>
+          </Dialog.Panel>
+        </Transition.Child>
+      </Dialog>
+    </Transition>
+  );
+};
+
+export const MyImageDialog = ({ imageSource, isModalOpen, closeModal }) => {
+  return (
+    <Transition appear show={isModalOpen} as={Fragment}>
+      <Dialog onClose={() => {}}>
+        <Transition.Child
+          as="div"
+          enter="ease-out duration-300"
+          enterFrom="opacity-0"
+          enterTo="opacity-100"
+          leave="ease-in duration-200"
+          leaveFrom="opacity-100"
+          leaveTo="opacity-0"
+        >
+          <div
+            onClick={closeModal}
+            className="fixed inset-0  top-[55px] z-30 bg-black bg-opacity-25"
+          />
+        </Transition.Child>
+        <Transition.Child
+          as={Fragment}
+          enter="ease-out duration-300"
+          enterFrom="opacity-0 scale-95"
+          enterTo="opacity-100 scale-100"
+          leave="ease-in duration-200"
+          leaveFrom="opacity-100 scale-100"
+          leaveTo="opacity-0 scale-95"
+        >
+          <Dialog.Panel className="flex-col bg-transparent absolute z-50 flex inset-0">
+            <div>
+              <AiOutlineClose
+                onClick={closeModal}
+                className="h-fit w-fit text-2xl cursor-pointer inset-0 absolute z-30 "
+              />
+            </div>
+            <Image src={imageSource} alt="image" layout="fill" objectFit="contain" />
           </Dialog.Panel>
         </Transition.Child>
       </Dialog>
