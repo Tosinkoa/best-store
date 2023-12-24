@@ -31,36 +31,6 @@ const Chat = () => {
         </div>
       </div>
       <div className="gap-y-2 flex-col fixed lg:ml-[550px] md:px-10 px-5 py-2  h-fit lg:w-[calc(100%_-_550px)] w-full right-0 bottom-0 bg-primary-50 flex ">
-        <div className="flex flex-row gap-4 w-full overflow-x-auto py-2">
-          <MyImageDialog
-            imageSource="/assets/images/iphone-14.png"
-            isModalOpen={isViewImageToSend}
-            closeModal={() => setisViewImageToSend(false)}
-          />
-          {Array(10)
-            .fill("")
-            .map((_, index) => (
-              <div
-                key={index}
-                className="h-fit p-3 rounded-md md:rounded-lg py-3 bg-primary-100"
-              >
-                <div className="w-full text-red-500 cursor-pointer mr-4">
-                  <RiDeleteBin6Fill className="text-2xl ml-auto" />
-                </div>
-                <div
-                  onClick={() => setisViewImageToSend(true)}
-                  className="h-40 w-44 relative cursor-pointer"
-                >
-                  <Image
-                    src="/assets/images/iphone-14.png"
-                    alt="phone"
-                    objectFit="contain"
-                    layout="fill"
-                  />
-                </div>
-              </div>
-            ))}
-        </div>
         <div className="flex items-center space-x-3 relative">
           <textarea
             type="text"
