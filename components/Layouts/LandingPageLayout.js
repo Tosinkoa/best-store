@@ -1,5 +1,5 @@
-import Footer from "../03Helper/Footer";
-import LandingPageNavbar from "../PagesComponent/LandingPage/LandingPageNavbar";
+import Footer from "../Footers/Footer";
+import LandingPageNavbar from "../Navbars/LandingPageNavbar";
 import { getLayout as getSiteLayout } from "./Layout";
 
 const LandingPageLayout = ({ children }) => {

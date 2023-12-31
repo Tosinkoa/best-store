@@ -88,7 +88,7 @@ const ProductFormAndPreviewTab = ({
   const [editProduct, { isLoading: isEditingProduct, data: editProductData }] =
     useEditProductMutation();
 
-  /**@Note Save product values by making a request to the server */
+  /**@Note Save product values by making a request to the backend */
   const addNewProductHandler = async () => {
     if (!productValues?.selectedCategory?.value)
       return setCategoryError("Cartegory is required");
@@ -268,7 +268,6 @@ const ProductFormAndPreviewTab = ({
   });
 
   /**@Note Update productValues for formik value changes */
-
   const formikValues = formik.values;
   useEffect(() => {
     const { name, in_stock, crossed_out_price, price } = formik.values;

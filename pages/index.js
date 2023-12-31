@@ -1,5 +1,4 @@
 import WebsiteMetadata from "@/components/00-WebsiteMetadata/WebsiteMetadata";
-import Footer from "@/components/03Helper/Footer";
 import LandingPageBanner from "@/components/PagesComponent/LandingPage/LandingPageBanner";
 import LandingPageBestSelling from "@/components/PagesComponent/LandingPage/LandingPageBestSelling";
 import LandingPageFlashDeals from "@/components/PagesComponent/LandingPage/LandingPageFlashDeals";

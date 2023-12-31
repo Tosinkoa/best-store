@@ -1,6 +1,6 @@
 import { configureStore } from "@reduxjs/toolkit";
 import { fetcherApi } from "./fetcherApi";
-import { setupListeners } from "@reduxjs/toolkit/dist/query";
+import { setupListeners } from "@reduxjs/toolkit/query";
 import addedCartToLocalStorageSlice from "./slices/added-cart-to-localstorage";
 
 const store = configureStore({

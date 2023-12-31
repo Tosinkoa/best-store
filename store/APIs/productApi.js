@@ -41,13 +41,19 @@ export const locationApi = fetcherApi.injectEndpoints({
       }),
       getASellerProducts: build.query({
         query: ({ data_amount, data_offset }) => ({
-          url: `/get-a-seller-products/${data_amount}?data_offset=${data_offset}`,
+          url: `/get-loggedin-seller-products/${data_amount}?data_offset=${data_offset}`,
         }),
         providesTags: ["ForProduct"],
       }),
       getOneProduct: build.query({
         query: (product_id) => ({
           url: `get-a-product/${product_id}`,
+        }),
+        providesTags: ["ForProduct"],
+      }),
+      getProductsBySellerId: build.query({
+        query: ({ seller_id, data_amount, data_offset }) => ({
+          url: `/get-products-by-seller-id/${seller_id}/${data_amount}?data_offset=${data_offset}`,
         }),
         providesTags: ["ForProduct"],
       }),
@@ -64,4 +70,5 @@ export const {
   useGetOneProductQuery,
   useGetAllProductsQuery,
   useGetAllSuggestedProductsQuery,
+  useGetProductsBySellerIdQuery,
 } = locationApi;
