@@ -18,5 +18,14 @@
         "titleBar.inactiveBackground": "#21573299",
         "titleBar.inactiveForeground": "#e7e7e799"
     },
-    "peacock.color": "#215732"
+    "peacock.color": "#215732",
+    "terminal.integrated.profiles.windows": {
+        "GitBash": {
+            "path": [
+                "C:\\Program Files\\Git\\bin\\bash.exe"
+            ],
+            "args": []
+        }
+    },
+    "terminal.integrated.defaultProfile.windows": "GitBash"
 }

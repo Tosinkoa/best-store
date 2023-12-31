@@ -47,17 +47,14 @@ const DashboardNavbar = ({ smallScreenSidebarHandler }) => {
 
   return (
     <div className="h-[55px] lg:w-[calc(100%_-_250px)] lg:ml-[250px] justify-between z-10 w-full flex items-center px-2 md:px-5 fixed bg-inherit bg-white">
-      <div className="md:text-lg lg:hidden font-bold pt-2 text-base text-primary-800 pl-2 md:ml-4 h-[55px] items-center bg-white">
+      <div className="md:text-lg lg:hidden font-bold pt-2 text-base text-primary-800 pl-2 md:ml-4 h-[55px] items-center bg-secondary-50">
         <BestAppLogo />
       </div>
 
       <div className="flex flex-row text-[28px] gap-x-4 lg:gap-x-5 items-center ml-auto w-fit">
-        <Link href="/notifications" passHref className="relative">
-          {/* <div className="rounded-full -right-1.5 -top-1 bg-red-600 text-secondary-50 w-6 h-6 items-center flex place-content-center absolute text-xs font-light">
-            20
-          </div> */}
+        {/* <Link href="/notifications" passHref className="relative">
           <BsChat className="md:text-3xl text-[26px]" />
-        </Link>
+        </Link> */}
         <Link href="/notifications" passHref className="relative">
           {/* <div className="rounded-full -right-1.5 -top-1 bg-red-600 text-secondary-50 w-6 h-6 items-center flex place-content-center absolute text-xs font-light">
             20

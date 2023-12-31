@@ -54,7 +54,7 @@ const Login = () => {
         await addBulkProductToCart(body);
         localStorage.removeItem("cart_products");
       }
-      router.push("/auth/otp-verification");
+      router.push("/product");
     }
   };
 

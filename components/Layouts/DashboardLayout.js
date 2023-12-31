@@ -10,7 +10,7 @@ const DashboardLayout = ({ children }) => {
   const { isMediumAndSmallScreen } = useGetScreenWidth();
 
   return (
-    <div className="text-secondary-700 text-sm md:text-sm relative bg-primary-50 overflow-hidden bottom-0 h-[100dvh] font-roboto">
+    <div className="text-secondary-700 text-sm md:text-sm relative bg-primary-50 overflow-hidden bottom-0 min-h-[100dvh] font-roboto">
       <DashboardNavbar smallScreenSidebarHandler={() => setShowSmallScreenSidebar(true)} />
       <div className="flex relative w-full h-full">
         <>
@@ -27,7 +27,7 @@ const DashboardLayout = ({ children }) => {
             ></div>
           )}
         </>
-        <div className="text-sm md:text-base mt-[55px] lg:w-[calc(100%_-_250px)]  lg:ml-auto flex relative w-full h-[calc(100%_-_55px)]">
+        <div className="text-sm md:text-base mt-[55px] lg:w-[calc(100%_-_250px)] lg:ml-auto relative w-full h-[calc(100%_-_55px)]">
           <div className="w-full h-full overflow-y-auto p-4 md:p-8">{children}</div>
         </div>
       </div>

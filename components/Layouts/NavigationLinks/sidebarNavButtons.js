@@ -8,11 +8,11 @@ export const sidebarNavButtons = [
     icon: <FaShoppingBag />,
     name: "Shop",
   },
-  {
-    linkParams: "/chat",
-    icon: <BsFillChatFill />,
-    name: "Chat",
-  },
+  // {
+  //   linkParams: "/chat",
+  //   icon: <BsFillChatFill />,
+  //   name: "Chat",
+  // },
   {
     linkParams: "/business",
     icon: <AiFillShop />,

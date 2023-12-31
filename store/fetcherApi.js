@@ -1,6 +1,6 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
-const BackendURL = process.env.NEXT_PUBLIC_BACKEND_URL;
+const BackendURL = process.env.BACKEND_URL;
 export const fetcherApi = createApi({
   reducerPath: "fetcherApi",
   baseQuery: fetchBaseQuery({
@@ -9,7 +9,7 @@ export const fetcherApi = createApi({
   }),
   tagTypes: [
     "ForProduct",
-    "ForSellerAccount",
+    "ForSeller",
     "ForUserAccount",
     "ForCart",
     "ForAuth",

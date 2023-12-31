@@ -1,6 +1,7 @@
 import Image from "next/legacy/image";
 import NumberFormatter from "@/components/01Utils/NumberFormatter";
 import ProductDetail from "./ProductDetail";
+import dayjs from "dayjs";
 
 export const SaleHistoryColumn = [
   {
@@ -11,7 +12,7 @@ export const SaleHistoryColumn = [
         <div className=" block">
           <div className="relative h-[60px] w-[60px] rounded-full ">
             <Image
-              src="https://www.apple.com/newsroom/images/product/ipad/standard/apple_ipados14_widgets_062220_big.jpg.large.jpg"
+              src={d.images[0].image_url}
               alt="product-picture"
               layout="fill"
               objectFit="cover"
@@ -25,28 +26,33 @@ export const SaleHistoryColumn = [
   {
     id: "product",
     Header: "Product",
-    accessor: (d) => <p className="flex whitespace-nowrap capitalize">{d.product}</p>,
+    accessor: "product",
+  },
+  {
+    id: "count",
+    Header: "Count",
+    accessor: "product_count",
   },
   {
     id: "buyer",
     Header: "Buyer",
-    accessor: (d) => <p className="flex whitespace-nowrap capitalize">John Den</p>,
+    accessor: (d) => `${d.buyer_first_name} ${d.buyer_last_name}`,
   },
   {
     id: "price",
     Header: "Price",
-    accessor: (d) => <p>{NumberFormatter(7800)}</p>,
+    accessor: (d) => `₦${NumberFormatter(d.amount)}`,
   },
   {
     id: "date",
     Header: "Date",
-    accessor: (d) => <p className="flex whitespace-nowrap">20 Jan, 2021</p>,
+    accessor: (d) => `${dayjs(d.date_purchased).format("MMM DD, YYYY")}`,
   },
   {
     id: "view",
     Header: " ",
     accessor: (d) => {
-      return <ProductDetail />;
+      return <ProductDetail eachSalesHistoryData={d} />;
     },
   },
 ];

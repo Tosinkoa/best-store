@@ -33,27 +33,6 @@ const TableComponent = ({ column, data, dontShowSearchFilter }) => {
   return (
     <div className="h-full bg-white border rounded-lg md:rounded-xl">
       <div className="justify-between text-sm h-20 p-3 flex font-semibold items-center border-b">
-        {/* <div className=" space-y-2 ">
-          <div className="flex space-x-2">
-          <p>Page</p>
-          <strong>
-          {pageIndex + 1} of {pageOptions.length}{" "}
-          </strong>
-          </div>
-          <div className="flex space-x-2">
-          <p>Go to page:</p>
-          <input
-          type="number"
-          defaultValue={pageIndex + 1}
-          onChange={(e) => {
-            const pageNumber = e.target.value ? Number(e.target.value) - 1 : 0;
-            gotoPage(pageNumber);
-          }}
-          className="border border-gray-600 rounded-sm ml-1 w-2/5 h-8 px-2"
-          />
-          </div>
-          </div>
-        */}
         {dontShowSearchFilter ? (
           ""
         ) : (

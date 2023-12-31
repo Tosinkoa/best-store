@@ -1,4 +1,5 @@
 import AuthorizeHOC from "@/HOC/AuthorizeHOC";
+import CustomToast from "@/components/01Utils/CustomToast";
 import { ErrorGetter } from "@/components/01Utils/ErrorGetter";
 import NumberFormatter from "@/components/01Utils/NumberFormatter";
 import { getLayout } from "@/components/Layouts/DashboardLayout";
@@ -9,12 +10,14 @@ import {
 } from "@/store/APIs/cartApi";
 import { useAddProductToSavedItemMutation } from "@/store/APIs/savedItemApi";
 import Image from "next/legacy/image";
+import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { AiOutlineHeart, AiOutlineInfoCircle } from "react-icons/ai";
 import { BsCart4 } from "react-icons/bs";
 import { toast } from "react-toastify";
 
 const Cart = () => {
+  const router = useRouter();
   const [addProductToCart] = useAddProductToCartMutation();
   const [removeProductFromCart] = useRemoveProductFromCartMutation();
   const [addProductToSavedItem] = useAddProductToSavedItemMutation();
@@ -76,9 +79,17 @@ const Cart = () => {
     if (result.data) return toast.success(result.data);
   };
 
+  const purchaseProducts = () => {
+    if (allCartData?.data?.length > 0 && !isAllCartError) {
+      router.push(`${process.env.BACKEND_URL}/make-payment`, "_self");
+    } else {
+      toast.warning("Cart is empty, add product to cart to continue");
+    }
+  };
+
   return (
-    <div className="h-[calc(100dvh_-_55px)] top-[55px] md:items-center md:flex">
-      <div className="grid grid-cols-1 md:grid-cols-5 w-full inset-0 p-3 lg:px-10 md:gap-x-4 gap-y-4  lg:gap-x-8">
+    <div className="h-full items-center top-[55px] md:items-center md:flex">
+      <div className="grid grid-cols-1 md:grid-cols-5 w-full inset-0 lg:px-10 md:gap-x-4 gap-y-4 lg:gap-x-8">
         <div className="col-span-3">
           <div className="flex  flex-col w-full rounded-md gap-y-3 shadow-md lg:p-8 p-5 border-secondary-300 bg-white">
             <div className="flex flex-row justify-between items-end">
@@ -151,9 +162,7 @@ const Cart = () => {
               {(allCartData?.data?.length < 1 || !allCartData?.data || isAllCartError) && (
                 <div className="inset-0 m-auto text-primary-600 space-y-2">
                   <BsCart4 className="mx-auto  text-5xl animate-breathing-object" />
-                  <p className=" font-semibold text-xl text-secondary-500 ">
-                    Nothing in cart!
-                  </p>
+                  <p className=" font-semibold text-xl text-secondary-500 ">Cart is empty!</p>
                 </div>
               )}
             </div>
@@ -173,14 +182,21 @@ const Cart = () => {
                 <AiOutlineInfoCircle className="text-lg" />
               </div>
 
-              <select className="bg-inherit py-2 border-b rounded-sm border-gray-600 font-semibold text-secondary-400">
-                {["Standard Delivery (Free)", "Fast Delivery + $50"].map((option, index) => (
-                  <option key={index} className=" animate-select border-b-2 border-gray-700">
+              <select className="py-2 border-b rounded-sm border-secondary-300 font-semibold text-secondary-400 bg-secondary-50">
+                {["Standard Delivery (Free)", "Fast Delivery + ₦50"].map((option, index) => (
+                  <option
+                    key={index}
+                    className="animate-select border-b-2 border-secondary-500 bg-secondary-50"
+                  >
                     {option}
                   </option>
                 ))}
               </select>
-              <button className="w-full rounded-sm lg:text-base text-xs bg-green-600 font-semibold text-center py-3 text-secondary-50">
+              <button
+                onClick={() => purchaseProducts()}
+                type="button"
+                className="w-full lg:text-base text-xs bg-secondary-800 rounded-button font-semibold text-center py-3 text-secondary-50"
+              >
                 CHECKOUT
               </button>
               <div className="font-bold space-y-2">
@@ -197,6 +213,7 @@ const Cart = () => {
           </div>
         </div>
       </div>
+      <CustomToast />
     </div>
   );
 };

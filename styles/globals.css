@@ -5,27 +5,25 @@
 
 /* START FROM HERE */
 
+@layer utilities {
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Hide scrollbar for IE, Edge and Firefox */
+  .no-scrollbar {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+}
+
 .input_style {
   @apply border-primary-200 focus:ring-0 rounded-md border-2 focus:outline-none focus:border-primary-700 outline-none px-3 py-2 w-full bg-inherit text-sm text-secondary-500;
 }
 
 .no_input_outline {
   @apply focus:border focus:ring-0;
-}
-
-@layer utilities {
-  @layer utilities {
-    /* Hide scrollbar for Chrome, Safari and Opera */
-    .no-scrollbar::-webkit-scrollbar {
-      display: none;
-    }
-
-    /* Hide scrollbar for IE, Edge and Firefox */
-    .no-scrollbar {
-      -ms-overflow-style: none; /* IE and Edge */
-      scrollbar-width: none; /* Firefox */
-    }
-  }
 }
 
 * {
